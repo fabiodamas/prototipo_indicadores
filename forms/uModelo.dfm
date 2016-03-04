@@ -16,6 +16,7 @@ object fraModelo: TfraModelo
     object img2: TcxImage
       Left = 0
       Top = 0
+      TabStop = False
       Align = alLeft
       AutoSize = True
       Picture.Data = {
@@ -770,12 +771,14 @@ object fraModelo: TfraModelo
         01E4276C261414D845250790076ADABED16CADF54E08D7ADAF104890DB0BDB63
         81BA0B887730707EB67A7862A3C137F71A7F13593DB36DEDE58E0987E7C6EFB4
         AE7CB99C8F1AF526AF9FB5D874A52BFFD9}
+      Properties.ShowFocusRect = False
       Style.BorderStyle = ebsNone
       TabOrder = 0
     end
     object img3: TcxImage
       Left = 319
       Top = 0
+      TabStop = False
       Align = alLeft
       AutoSize = True
       Picture.Data = {
@@ -1646,12 +1649,14 @@ object fraModelo: TfraModelo
         E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E
         00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E00E0
         0E00E00E00E01FFFD9}
+      Properties.ShowFocusRect = False
       Style.BorderStyle = ebsNone
       TabOrder = 1
     end
     object cxImage1: TcxImage
       Left = 371
       Top = 0
+      TabStop = False
       Align = alRight
       AutoSize = True
       Picture.Data = {
@@ -2319,12 +2324,14 @@ object fraModelo: TfraModelo
         14184C37161C38AC36496D88B12334D478EC3694B6CB2DA1B6D2942488A95294
         B5296A3352D6A52D4A51EEA529466A529467CCD4A3333333E6667B98D9E3AC81
         03FFD9}
+      Properties.ShowFocusRect = False
       Style.BorderStyle = ebsNone
       TabOrder = 2
     end
     object cxImage2: TcxImage
       Left = 602
       Top = 0
+      TabStop = False
       Align = alRight
       AutoSize = True
       Picture.Data = {
@@ -2651,12 +2658,14 @@ object fraModelo: TfraModelo
         1267B9E4F2A33528CCCCCCCCCF731DD5EC226B431B6036E8A20AC3B9F5405440
         4404404404404404404404404404404404404404404404404404404404404404
         4044044044044044044044044044044044044045FFD9}
+      Properties.ShowFocusRect = False
       Style.BorderStyle = ebsNone
       TabOrder = 3
     end
     object cxImage3: TcxImage
       Left = 1458
       Top = 93
+      Cursor = crHandPoint
       AutoSize = True
       Picture.Data = {
         0A544A504547496D61676529070000FFD8FFE000104A46494600010101004800
@@ -2717,12 +2726,14 @@ object fraModelo: TfraModelo
         1869842C598616B2841459442952C412490B555AAB90BAB5D6AACB2B5D4A2AA5
         55575D5AD5AEBAF519275EE7B93DC93F3C52ECCCCC598966625999892CCC4EA4
         927B924F724F72784FD6384F0747070747070747071FFFD9}
+      Properties.ShowFocusRect = False
       Style.BorderStyle = ebsNone
       TabOrder = 4
     end
     object cxImage4: TcxImage
       Left = 1426
       Top = 92
+      Cursor = crHandPoint
       AutoSize = True
       Picture.Data = {
         0A544A504547496D61676531060000FFD8FFE000104A46494600010101004800
@@ -2775,12 +2786,14 @@ object fraModelo: TfraModelo
         5BC1BCC0E8F0A54AB3C3DC80ACE2DAC6FAA756E3EAB5A752A97B0DF52375BEFD
         BEEF7FF2752E77F160CCEE0BCB0E43C57BDEF8EF0BDFDEF6FD7AEFE5353D8717
         C8D7F193C9C76EEA3619253C9B3C9B79CFCE58E52F2BDFDFA16F5175C1D7FFD9}
+      Properties.ShowFocusRect = False
       Style.BorderStyle = ebsNone
       TabOrder = 5
     end
     object cxImage5: TcxImage
       Left = 1511
       Top = 41
+      Cursor = crHandPoint
       AutoSize = True
       Picture.Data = {
         0A544A504547496D6167657C170000FFD8FFE000104A46494600010101004800
@@ -2972,6 +2985,7 @@ object fraModelo: TfraModelo
         12E6CB569F1180AF362B133831DB9E675394C94475D62B0D1168AA557076C952
         BBC82550566B124524911C23E81F855713D4E2713D4E2713D4E2713D4E2713D4
         E2713D4E2713D4E271FFD9}
+      Properties.ShowFocusRect = False
       Style.BorderStyle = ebsNone
       TabOrder = 6
     end
@@ -2980,6 +2994,7 @@ object fraModelo: TfraModelo
       Top = 94
       Width = 98
       Height = 27
+      Cursor = crHandPoint
       Caption = 'Ana Paula'
       Color = 2118917
       Font.Charset = ANSI_CHARSET
