@@ -16,7 +16,8 @@ uses
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinXmas2008Blue, dxSkinscxPCPainter, ExtCtrls, cxPC, AdvScrollBox,
   cxSplitter, AdvPanel, StdCtrls, dxDockControl, dxDockPanel, cxContainer,
-  cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar;
+  cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar, DateUtils,
+  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cxTreeView ;
 
 type
   TfrmPainelPrincipal = class(TForm)
@@ -48,6 +49,41 @@ type
     cdtDataInicial: TcxDateEdit;
     cxLabel2: TcxLabel;
     cdtDataFinal: TcxDateEdit;
+    dxDockSite2: TdxDockSite;
+    dxDockPanel2: TdxDockPanel;
+    dxLayoutDockSite3: TdxLayoutDockSite;
+    cxImage1: TcxImage;
+    cxlbl2: TcxLabel;
+    cxImage2: TcxImage;
+    cxImage3: TcxImage;
+    cxLabel3: TcxLabel;
+    cxImage4: TcxImage;
+    dxDockSite3: TdxDockSite;
+    dxLayoutDockSite2: TdxLayoutDockSite;
+    dxDockPanel4: TdxDockPanel;
+    cxImage5: TcxImage;
+    cxLabel4: TcxLabel;
+    cxImage6: TcxImage;
+    dxDockSite4: TdxDockSite;
+    dxLayoutDockSite5: TdxLayoutDockSite;
+    dxDockPanel5: TdxDockPanel;
+    cxImage7: TcxImage;
+    cxLabel5: TcxLabel;
+    cxImage8: TcxImage;
+    dxDockSite1: TdxDockSite;
+    dxLayoutDockSite4: TdxLayoutDockSite;
+    dxDockPanel3: TdxDockPanel;
+    cxImage9: TcxImage;
+    cxLabel6: TcxLabel;
+    cxImage10: TcxImage;
+    dxDockSite5: TdxDockSite;
+    dxLayoutDockSite6: TdxLayoutDockSite;
+    dxDockPanel6: TdxDockPanel;
+    cxImage11: TcxImage;
+    cxLabel7: TcxLabel;
+    cxImage12: TcxImage;
+    cxtrvw1: TcxTreeView;
+    wbMapa: TWebBrowser;
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
@@ -80,7 +116,7 @@ begin
           qryConsulta.Open;
 
           cbbHospitais.Properties.Items.Add('Todos');
-          
+
           while not qryConsulta.Eof do
           begin
                cbbHospitais.Properties.Items.Add(qryConsulta.Fieldbyname('nome_instituicao').AsString);
@@ -91,7 +127,11 @@ begin
           cbbHospitais.ItemIndex := 0;
      end;
 
-     cdtDataInicial.
+     cdtDataInicial.Date := IncDay(Date,-60);
+     cdtDataFinal.Date := Date;
+
+
+     wbMapa.Navigate('http://maps.google.com/maps?q=');
 
 
 end;
