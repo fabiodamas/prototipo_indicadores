@@ -18,16 +18,23 @@ uses
 
 type
   TfraModelo = class(TFrame)
-    Panel1: TPanel;
-    img2: TcxImage;
-    img3: TcxImage;
-    cxImage1: TcxImage;
-    cxImage2: TcxImage;
-    cxImage3: TcxImage;
-    cxImage4: TcxImage;
-    cxImage5: TcxImage;
-    txt1: TStaticText;
-    img1: TcxImage;
+    pnlAHMDashboardDireito: TPanel;
+    imgAHM: TcxImage;
+    imgLayoutCentro: TcxImage;
+    imgLogoSaoPaulo: TcxImage;
+    imgLayoutDireito: TcxImage;
+    imgBarraEnderecoIcones: TcxImage;
+    pnlBarraMenu: TPanel;
+    lblMenu: TLabel;
+    imgMinimizar: TcxImage;
+    imgRestaurar: TcxImage;
+    imgFechar: TcxImage;
+    imgHelp: TcxImage;
+    imgFerramentas: TcxImage;
+    imgPerfil: TcxImage;
+    txtNomeUsuario: TStaticText;
+    procedure img4Click(Sender: TObject);
+    procedure imgFecharClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,5 +44,15 @@ type
 implementation
 
 {$R *.dfm}
+
+procedure TfraModelo.img4Click(Sender: TObject);
+begin
+     Application.Terminate;
+end;
+
+procedure TfraModelo.imgFecharClick(Sender: TObject);
+begin
+     Application.Terminate;
+end;
 
 end.
