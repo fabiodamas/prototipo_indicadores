@@ -16,7 +16,7 @@ uses
   dxSkinXmas2008Blue, dxSkinscxPCPainter, ExtCtrls, cxPC, AdvScrollBox,
   cxSplitter, AdvPanel, StdCtrls, dxDockControl, dxDockPanel, cxContainer,
   cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar, DateUtils,
-  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cxTreeView, cefvcl;
+  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw;
 
 // ceflib, cefvcl, Buttons, ActnList, Menus, ComCtrls;
 

@@ -1,6 +1,6 @@
 object frmPainelPrincipal: TfrmPainelPrincipal
-  Left = 0
-  Top = 39
+  Left = 78
+  Top = 94
   BorderStyle = bsNone
   Caption = 'Prot'#243'tipo Indicadores'
   ClientHeight = 683
