@@ -1,17 +1,16 @@
 object frmPainelPrincipal: TfrmPainelPrincipal
-  Left = 102
-  Top = 118
+  Left = 0
+  Top = 39
   BorderStyle = bsNone
   Caption = 'Prot'#243'tipo Indicadores'
-  ClientHeight = 663
-  ClientWidth = 1289
+  ClientHeight = 683
+  ClientWidth = 1264
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  Menu = mm1
   OldCreateOrder = False
   WindowState = wsMaximized
   OnShow = FormShow
@@ -20,28 +19,40 @@ object frmPainelPrincipal: TfrmPainelPrincipal
   inline fraCabecalho: TfraModelo
     Left = 0
     Top = 0
-    Width = 1289
-    Height = 209
+    Width = 1264
+    Height = 234
     Align = alTop
     TabOrder = 0
-    inherited Panel1: TPanel
-      Width = 1289
-      inherited img2: TcxImage
+    inherited pnlAHMDashboardDireito: TPanel
+      Width = 1264
+      inherited imgLayoutDireito: TcxImage
+        Left = 943
+      end
+      inherited imgAHM: TcxImage
         Cursor = crHandPoint
       end
-      inherited cxImage1: TcxImage
-        Left = 737
+      inherited imgLogoSaoPaulo: TcxImage
+        Left = 712
       end
-      inherited cxImage2: TcxImage
-        Left = 968
+    end
+    inherited pnlBarraMenu: TPanel
+      Width = 1264
+      inherited imgMinimizar: TcxImage
+        Left = 1159
+      end
+      inherited imgRestaurar: TcxImage
+        Left = 1194
+      end
+      inherited imgFechar: TcxImage
+        Left = 1229
       end
     end
   end
   object scoFundo: TAdvScrollBox
     Left = 0
-    Top = 209
-    Width = 1289
-    Height = 454
+    Top = 234
+    Width = 1264
+    Height = 449
     HorzScrollBar.Visible = False
     Align = alClient
     BevelInner = bvNone
@@ -1109,23 +1120,12 @@ object frmPainelPrincipal: TfrmPainelPrincipal
           StatusBar.Font.Name = 'Tahoma'
           StatusBar.Font.Style = []
           FullHeight = 0
-          object cxtrvw1: TcxTreeView
-            Left = 8
-            Top = 56
+          object edt1: TEdit
+            Left = 48
+            Top = 248
+            Width = 121
+            Height = 25
             TabOrder = 0
-          end
-          object wbMapa: TWebBrowser
-            Left = 144
-            Top = 16
-            Width = 433
-            Height = 281
-            TabOrder = 1
-            ControlData = {
-              4C000000C02C00000B1D00000000000000000000000000000000000000000000
-              000000004C000000000000000000000001000000E0D057007335CF11AE690800
-              2B2E126208000000000000004C0000000114020000000000C000000000000046
-              8000000000000000000000000000000000000000000000000000000000000000
-              00000000000000000100000000000000000000000000000000000000}
           end
         end
       end
@@ -1142,7 +1142,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       Left = 0
       Top = 0
       Width = 1581
-      Height = 89
+      Height = 48
       Align = alTop
       Color = clWhite
       Font.Charset = ANSI_CHARSET
@@ -1153,8 +1153,8 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       ParentFont = False
       TabOrder = 1
       object cxlbl1: TcxLabel
-        Left = 16
-        Top = 8
+        Left = 6
+        Top = -4
         Caption = 'Hospitais'
         ParentFont = False
         Style.Font.Charset = ANSI_CHARSET
@@ -1165,18 +1165,17 @@ object frmPainelPrincipal: TfrmPainelPrincipal
         Style.IsFontAssigned = True
       end
       object cbbHospitais: TcxComboBox
-        Left = 24
-        Top = 29
+        Left = 5
+        Top = 16
         Properties.DropDownListStyle = lsFixedList
         Properties.Items.Strings = (
-          'Ermelino Matarazzo - Hosp. Dr. Al'#237'pio Corr'#234'a Netto')
+          'Todos')
         TabOrder = 1
-        Text = 'Ermelino Matarazzo - Hosp. Dr. Al'#237'pio Corr'#234'a Netto'
         Width = 409
       end
       object cxLabel1: TcxLabel
-        Left = 488
-        Top = 8
+        Left = 421
+        Top = -4
         Caption = 'Data inicial'
         ParentFont = False
         Style.Font.Charset = ANSI_CHARSET
@@ -1187,14 +1186,14 @@ object frmPainelPrincipal: TfrmPainelPrincipal
         Style.IsFontAssigned = True
       end
       object cdtDataInicial: TcxDateEdit
-        Left = 488
-        Top = 32
+        Left = 421
+        Top = 16
         TabOrder = 3
         Width = 121
       end
       object cxLabel2: TcxLabel
-        Left = 632
-        Top = 8
+        Left = 550
+        Top = -4
         Caption = 'Data final'
         ParentFont = False
         Style.Font.Charset = ANSI_CHARSET
@@ -1205,16 +1204,16 @@ object frmPainelPrincipal: TfrmPainelPrincipal
         Style.IsFontAssigned = True
       end
       object cdtDataFinal: TcxDateEdit
-        Left = 632
-        Top = 32
+        Left = 550
+        Top = 16
         TabOrder = 5
         Width = 121
       end
     end
   end
   object txt1: TStaticText
-    Left = 64
-    Top = 46
+    Left = 50
+    Top = 67
     Width = 146
     Height = 18
     Caption = 'http://dashboard-ahm.prodam'
@@ -1227,30 +1226,5 @@ object frmPainelPrincipal: TfrmPainelPrincipal
     ParentColor = False
     ParentFont = False
     TabOrder = 2
-  end
-  object mm1: TMainMenu
-    Left = 1208
-    Top = 368
-    object Arquivo1: TMenuItem
-      Caption = '&Arquivo'
-    end
-    object Editar1: TMenuItem
-      Caption = '&Editar'
-    end
-    object Exibir1: TMenuItem
-      Caption = 'E&xibir'
-    end
-    object Histrico1: TMenuItem
-      Caption = '&Hist'#243'rico'
-    end
-    object Favoritos1: TMenuItem
-      Caption = 'Fa&voritos'
-    end
-    object FerramentaS1: TMenuItem
-      Caption = '&Ferramentas'
-    end
-    object Ajuda1: TMenuItem
-      Caption = '&Ajuda'
-    end
   end
 end

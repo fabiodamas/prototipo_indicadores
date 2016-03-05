@@ -5,31 +5,24 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, uModelo, Menus, cxGraphics, cxControls, cxLookAndFeels,
-  cxLookAndFeelPainters, dxSkinsCore, dxSkinBlack, dxSkinBlue,
-  dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinFoggy,
-  dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky,
-  dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins,
-  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
-  dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinOffice2010Black,
-  dxSkinOffice2010Blue, dxSkinOffice2010Silver, dxSkinPumpkin, dxSkinSeven,
-  dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
-  dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
+  cxLookAndFeelPainters, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel,
+  dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinFoggy, dxSkinGlassOceans,
+  dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
+  dxSkinMcSkin, dxSkinMoneyTwins, dxSkinOffice2007Black, dxSkinOffice2007Blue,
+  dxSkinOffice2007Green, dxSkinOffice2007Pink, dxSkinOffice2007Silver,
+  dxSkinOffice2010Black, dxSkinOffice2010Blue, dxSkinOffice2010Silver,
+  dxSkinPumpkin, dxSkinSeven, dxSkinSharp, dxSkinSilver, dxSkinSpringTime,
+  dxSkinStardust, dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinXmas2008Blue, dxSkinscxPCPainter, ExtCtrls, cxPC, AdvScrollBox,
   cxSplitter, AdvPanel, StdCtrls, dxDockControl, dxDockPanel, cxContainer,
   cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar, DateUtils,
-  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cxTreeView ;
+  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cxTreeView, cefvcl;
+
+// ceflib, cefvcl, Buttons, ActnList, Menus, ComCtrls;
 
 type
   TfrmPainelPrincipal = class(TForm)
     fraCabecalho: TfraModelo;
-    mm1: TMainMenu;
-    Arquivo1: TMenuItem;
-    Editar1: TMenuItem;
-    Exibir1: TMenuItem;
-    Histrico1: TMenuItem;
-    Favoritos1: TMenuItem;
-    FerramentaS1: TMenuItem;
-    Ajuda1: TMenuItem;
     scoFundo: TAdvScrollBox;
     pco1: TcxPageControl;
     tabInternacao: TcxTabSheet;
@@ -82,9 +75,9 @@ type
     cxImage11: TcxImage;
     cxLabel7: TcxLabel;
     cxImage12: TcxImage;
-    cxtrvw1: TcxTreeView;
-    wbMapa: TWebBrowser;
+    edt1: TEdit;
     procedure FormShow(Sender: TObject);
+    procedure fraCabecalhocxImage6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -96,44 +89,52 @@ var
 
 implementation
 
-uses uBaseDados;
+uses
+  uBaseDados;
 
 {$R *.dfm}
 
 procedure TfrmPainelPrincipal.FormShow(Sender: TObject);
 begin
-     dmBaseDados.conConexao.Connect;
+  dmBaseDados.conConexao.Connect;
 
-     cbbHospitais.Properties.Items.Clear;
+  cbbHospitais.Properties.Items.Clear;
 
-     with dmBaseDados do
-     begin
-          qryConsulta.Close;
-          qryConsulta.SQL.Clear;
-          qryConsulta.SQL.Add('Select * ');
-          qryConsulta.SQL.Add('from indicador_hospital');
-          qryConsulta.SQL.Add('where ativo=true ');
-          qryConsulta.Open;
+  with dmBaseDados do
+  begin
+    qryConsulta.Close;
+    qryConsulta.SQL.Clear;
+    qryConsulta.SQL.Add('Select * ');
+    qryConsulta.SQL.Add('from indicador_hospital');
+    qryConsulta.SQL.Add('where ativo=true ');
+    qryConsulta.Open;
 
-          cbbHospitais.Properties.Items.Add('Todos');
+    cbbHospitais.Properties.Items.Add('Todos');
 
-          while not qryConsulta.Eof do
-          begin
-               cbbHospitais.Properties.Items.Add(qryConsulta.Fieldbyname('nome_instituicao').AsString);
-               qryConsulta.Next;
-          end;
+    while not qryConsulta.Eof do
+    begin
+      cbbHospitais.Properties.Items.Add(qryConsulta.Fieldbyname('nome_instituicao').AsString);
+      qryConsulta.Next;
+    end;
 
-          qryConsulta.Close;
-          cbbHospitais.ItemIndex := 0;
-     end;
+    qryConsulta.Close;
+    cbbHospitais.ItemIndex := 0;
+  end;
 
-     cdtDataInicial.Date := IncDay(Date,-60);
-     cdtDataFinal.Date := Date;
+  cdtDataInicial.Date := IncDay(Date, -60);
+  cdtDataFinal.Date := Date;
 
-
-     wbMapa.Navigate('http://maps.google.com/maps?q=');
+    // ShowMessage()mozNavegador.Navigate(ExtractFilePath(Application.ExeName)+'hospitais.html');
+    // mozNavegador.Navigate('http://www.uol.com.br');
+   //  chmNavegador.Browser.MainFrame.LoadUrl(ExtractFilePath(Application.ExeName)+'hospitais.html');
 
 
 end;
 
+procedure TfrmPainelPrincipal.fraCabecalhocxImage6Click(Sender: TObject);
+begin
+     Application.Terminate;
+end;
+
 end.
+
