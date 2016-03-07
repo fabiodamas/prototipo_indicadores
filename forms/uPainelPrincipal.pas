@@ -16,7 +16,7 @@ uses
   dxSkinXmas2008Blue, dxSkinscxPCPainter, ExtCtrls, cxPC, AdvScrollBox,
   cxSplitter, AdvPanel, StdCtrls, dxDockControl, dxDockPanel, cxContainer,
   cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar, DateUtils,
-  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw;
+  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cefvcl, uModeloRodape;
 
 // ceflib, cefvcl, Buttons, ActnList, Menus, ComCtrls;
 
@@ -28,20 +28,11 @@ type
     tabInternacao: TcxTabSheet;
     tabAmbulatorio: TcxTabSheet;
     tabPacientes: TcxTabSheet;
-    Panel1: TPanel;
     advpnl1: TAdvPanel;
-    cxspltr1: TcxSplitter;
-    advpnl2: TAdvPanel;
     txt1: TStaticText;
     dxDockPanel1: TdxDockPanel;
     dxdckst1: TdxDockSite;
-    cxlbl1: TcxLabel;
-    cbbHospitais: TcxComboBox;
-    cxLabel1: TcxLabel;
     dxLayoutDockSite1: TdxLayoutDockSite;
-    cdtDataInicial: TcxDateEdit;
-    cxLabel2: TcxLabel;
-    cdtDataFinal: TcxDateEdit;
     dxDockSite2: TdxDockSite;
     dxDockPanel2: TdxDockPanel;
     dxLayoutDockSite3: TdxLayoutDockSite;
@@ -75,7 +66,17 @@ type
     cxImage11: TcxImage;
     cxLabel7: TcxLabel;
     cxImage12: TcxImage;
-    edt1: TEdit;
+    Panel1: TPanel;
+    cxlbl1: TcxLabel;
+    cbbHospitais: TcxComboBox;
+    cxLabel1: TcxLabel;
+    cdtDataInicial: TcxDateEdit;
+    cxLabel2: TcxLabel;
+    cdtDataFinal: TcxDateEdit;
+    advpnl2: TAdvPanel;
+    Chromium1: TChromium;
+    fraModeloRodape1: TfraModeloRodape;
+    cxspltr1: TcxSplitter;
     procedure FormShow(Sender: TObject);
     procedure fraCabecalhocxImage6Click(Sender: TObject);
   private

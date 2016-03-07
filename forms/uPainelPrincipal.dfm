@@ -1,10 +1,10 @@
 object frmPainelPrincipal: TfrmPainelPrincipal
-  Left = 78
-  Top = 94
+  Left = -8
+  Top = -8
   BorderStyle = bsNone
   Caption = 'Prot'#243'tipo Indicadores'
-  ClientHeight = 683
-  ClientWidth = 1264
+  ClientHeight = 838
+  ClientWidth = 1600
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,53 +19,37 @@ object frmPainelPrincipal: TfrmPainelPrincipal
   inline fraCabecalho: TfraModelo
     Left = 0
     Top = 0
-    Width = 1264
+    Width = 1600
     Height = 234
     Align = alTop
     TabOrder = 0
     inherited pnlAHMDashboardDireito: TPanel
-      Width = 1264
-      inherited imgLayoutDireito: TcxImage
-        Left = 943
-      end
       inherited imgAHM: TcxImage
         Cursor = crHandPoint
-      end
-      inherited imgLogoSaoPaulo: TcxImage
-        Left = 712
-      end
-    end
-    inherited pnlBarraMenu: TPanel
-      Width = 1264
-      inherited imgMinimizar: TcxImage
-        Left = 1159
-      end
-      inherited imgRestaurar: TcxImage
-        Left = 1194
-      end
-      inherited imgFechar: TcxImage
-        Left = 1229
       end
     end
   end
   object scoFundo: TAdvScrollBox
     Left = 0
-    Top = 234
-    Width = 1264
-    Height = 449
+    Top = 282
+    Width = 705
+    Height = 470
     HorzScrollBar.Visible = False
-    Align = alClient
+    Align = alLeft
+    BevelEdges = []
     BevelInner = bvNone
     BevelOuter = bvNone
+    BorderStyle = bsNone
     Ctl3D = False
     ParentCtl3D = False
     TabOrder = 1
     object pco1: TcxPageControl
       Left = 0
-      Top = 47
-      Width = 1581
-      Height = 588
+      Top = 0
+      Width = 705
+      Height = 470
       ActivePage = tabInternacao
+      Align = alClient
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -73,9 +57,9 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ClientRectBottom = 584
+      ClientRectBottom = 466
       ClientRectLeft = 4
-      ClientRectRight = 1577
+      ClientRectRight = 701
       ClientRectTop = 30
       object tabInternacao: TcxTabSheet
         Caption = 'Interna'#231#227'o'
@@ -84,8 +68,9 @@ object frmPainelPrincipal: TfrmPainelPrincipal
           Left = 0
           Top = 0
           Width = 577
-          Height = 554
+          Height = 436
           Align = alLeft
+          BevelOuter = bvNone
           Color = clWhite
           TabOrder = 0
           UseDockManager = True
@@ -461,7 +446,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
               ManagerFont = False
               AllowFloating = True
               AutoHide = False
-              Caption = 'Sa'#237'das Efetuads'
+              Caption = 'Sa'#237'das Efetuadas'
               DockType = 1
               OriginalWidth = 185
               OriginalHeight = 140
@@ -1088,46 +1073,6 @@ object frmPainelPrincipal: TfrmPainelPrincipal
             end
           end
         end
-        object cxspltr1: TcxSplitter
-          Left = 577
-          Top = 0
-          Width = 8
-          Height = 554
-          Control = advpnl1
-          Color = clGreen
-          ParentColor = False
-        end
-        object advpnl2: TAdvPanel
-          Left = 585
-          Top = 0
-          Width = 988
-          Height = 554
-          Align = alClient
-          Color = clWhite
-          TabOrder = 2
-          UseDockManager = True
-          Version = '1.9.0.3'
-          Caption.Color = clHighlight
-          Caption.ColorTo = clNone
-          Caption.Font.Charset = DEFAULT_CHARSET
-          Caption.Font.Color = clHighlightText
-          Caption.Font.Height = -11
-          Caption.Font.Name = 'MS Sans Serif'
-          Caption.Font.Style = []
-          StatusBar.Font.Charset = DEFAULT_CHARSET
-          StatusBar.Font.Color = clWindowText
-          StatusBar.Font.Height = -11
-          StatusBar.Font.Name = 'Tahoma'
-          StatusBar.Font.Style = []
-          FullHeight = 0
-          object edt1: TEdit
-            Left = 48
-            Top = 248
-            Width = 121
-            Height = 25
-            TabOrder = 0
-          end
-        end
       end
       object tabAmbulatorio: TcxTabSheet
         Caption = 'Ambulat'#243'rio'
@@ -1136,78 +1081,6 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       object tabPacientes: TcxTabSheet
         Caption = 'Pacientes'
         ImageIndex = 2
-      end
-    end
-    object Panel1: TPanel
-      Left = 0
-      Top = 0
-      Width = 1581
-      Height = 48
-      Align = alTop
-      Color = clWhite
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-      object cxlbl1: TcxLabel
-        Left = 6
-        Top = -4
-        Caption = 'Hospitais'
-        ParentFont = False
-        Style.Font.Charset = ANSI_CHARSET
-        Style.Font.Color = clWindowText
-        Style.Font.Height = -16
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = []
-        Style.IsFontAssigned = True
-      end
-      object cbbHospitais: TcxComboBox
-        Left = 5
-        Top = 16
-        Properties.DropDownListStyle = lsFixedList
-        Properties.Items.Strings = (
-          'Todos')
-        TabOrder = 1
-        Width = 409
-      end
-      object cxLabel1: TcxLabel
-        Left = 421
-        Top = -4
-        Caption = 'Data inicial'
-        ParentFont = False
-        Style.Font.Charset = ANSI_CHARSET
-        Style.Font.Color = clWindowText
-        Style.Font.Height = -16
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = []
-        Style.IsFontAssigned = True
-      end
-      object cdtDataInicial: TcxDateEdit
-        Left = 421
-        Top = 16
-        TabOrder = 3
-        Width = 121
-      end
-      object cxLabel2: TcxLabel
-        Left = 550
-        Top = -4
-        Caption = 'Data final'
-        ParentFont = False
-        Style.Font.Charset = ANSI_CHARSET
-        Style.Font.Color = clWindowText
-        Style.Font.Height = -16
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = []
-        Style.IsFontAssigned = True
-      end
-      object cdtDataFinal: TcxDateEdit
-        Left = 550
-        Top = 16
-        TabOrder = 5
-        Width = 121
       end
     end
   end
@@ -1226,5 +1099,154 @@ object frmPainelPrincipal: TfrmPainelPrincipal
     ParentColor = False
     ParentFont = False
     TabOrder = 2
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 234
+    Width = 1600
+    Height = 48
+    Align = alTop
+    BevelOuter = bvNone
+    Color = clWhite
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    object cxlbl1: TcxLabel
+      Left = 6
+      Top = -4
+      Caption = 'Hospitais'
+      ParentFont = False
+      Style.Font.Charset = ANSI_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -16
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+    end
+    object cbbHospitais: TcxComboBox
+      Left = 5
+      Top = 16
+      Properties.DropDownListStyle = lsFixedList
+      Properties.Items.Strings = (
+        'Todos')
+      TabOrder = 1
+      Width = 409
+    end
+    object cxLabel1: TcxLabel
+      Left = 421
+      Top = -4
+      Caption = 'Data inicial'
+      ParentFont = False
+      Style.Font.Charset = ANSI_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -16
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+    end
+    object cdtDataInicial: TcxDateEdit
+      Left = 421
+      Top = 16
+      TabOrder = 3
+      Width = 121
+    end
+    object cxLabel2: TcxLabel
+      Left = 550
+      Top = -4
+      Caption = 'Data final'
+      ParentFont = False
+      Style.Font.Charset = ANSI_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -16
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+    end
+    object cdtDataFinal: TcxDateEdit
+      Left = 550
+      Top = 16
+      TabOrder = 5
+      Width = 121
+    end
+  end
+  object advpnl2: TAdvPanel
+    Left = 713
+    Top = 282
+    Width = 887
+    Height = 470
+    Align = alClient
+    BevelInner = bvLowered
+    Color = clWhite
+    TabOrder = 4
+    UseDockManager = True
+    Version = '1.9.0.3'
+    Caption.Color = clHighlight
+    Caption.ColorTo = clNone
+    Caption.Font.Charset = DEFAULT_CHARSET
+    Caption.Font.Color = clHighlightText
+    Caption.Font.Height = -11
+    Caption.Font.Name = 'MS Sans Serif'
+    Caption.Font.Style = []
+    StatusBar.Font.Charset = DEFAULT_CHARSET
+    StatusBar.Font.Color = clWindowText
+    StatusBar.Font.Height = -11
+    StatusBar.Font.Name = 'Tahoma'
+    StatusBar.Font.Style = []
+    FullHeight = 0
+    object Chromium1: TChromium
+      Left = 58
+      Top = 18
+      Width = 719
+      Height = 247
+      DefaultUrl = 
+        'C:\Users\p017414\Documents\Indicadores\prototipo_delphi_4\hospit' +
+        'ais.html'
+      TabOrder = 0
+    end
+  end
+  inline fraModeloRodape1: TfraModeloRodape
+    Left = 0
+    Top = 752
+    Width = 1600
+    Height = 86
+    Align = alBottom
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 5
+    inherited pnlAHMDashboardRodape: TPanel
+      Width = 1583
+      Height = 94
+      inherited Image2: TImage
+        Width = 1583
+      end
+      inherited cxLabel1: TcxLabel
+        Style.IsFontAssigned = True
+      end
+      inherited cxImage1: TcxImage
+        Left = 1502
+      end
+      inherited cxLabel2: TcxLabel
+        Left = 1404
+        Style.IsFontAssigned = True
+      end
+      inherited cxLabel3: TcxLabel
+        Left = 1404
+        Style.IsFontAssigned = True
+      end
+      inherited cxLabel4: TcxLabel
+        Style.IsFontAssigned = True
+      end
+    end
+  end
+  object cxspltr1: TcxSplitter
+    Left = 705
+    Top = 282
+    Width = 8
+    Height = 470
+    Control = scoFundo
   end
 end

@@ -1,20 +1,20 @@
 object fraModelo: TfraModelo
   Left = 0
   Top = 0
-  Width = 1149
-  Height = 295
+  Width = 1600
+  Height = 838
   TabOrder = 0
   object pnlAHMDashboardDireito: TPanel
     Left = 0
     Top = 100
-    Width = 1149
+    Width = 1600
     Height = 130
     Align = alTop
     BevelOuter = bvNone
     Color = clWhite
     TabOrder = 0
     object imgLayoutDireito: TcxImage
-      Left = 828
+      Left = 1279
       Top = 0
       TabStop = False
       Align = alRight
@@ -1990,7 +1990,7 @@ object fraModelo: TfraModelo
       Width = 409
     end
     object imgLogoSaoPaulo: TcxImage
-      Left = 597
+      Left = 1048
       Top = 0
       TabStop = False
       Align = alRight
@@ -2666,7 +2666,7 @@ object fraModelo: TfraModelo
       TabOrder = 2
     end
     object imgHelp: TcxImage
-      Left = 1108
+      Left = 1396
       Top = 85
       Cursor = crHandPoint
       AutoSize = True
@@ -2734,7 +2734,7 @@ object fraModelo: TfraModelo
       TabOrder = 4
     end
     object imgFerramentas: TcxImage
-      Left = 1140
+      Left = 1428
       Top = 84
       Cursor = crHandPoint
       AutoSize = True
@@ -2794,7 +2794,7 @@ object fraModelo: TfraModelo
       TabOrder = 5
     end
     object imgPerfil: TcxImage
-      Left = 1192
+      Left = 1504
       Top = 32
       Cursor = crHandPoint
       AutoSize = True
@@ -2993,7 +2993,7 @@ object fraModelo: TfraModelo
       TabOrder = 6
     end
     object txtNomeUsuario: TStaticText
-      Left = 1182
+      Left = 1494
       Top = 94
       Width = 98
       Height = 27
@@ -3444,7 +3444,7 @@ object fraModelo: TfraModelo
   object pnlBarraMenu: TPanel
     Left = 0
     Top = 0
-    Width = 1149
+    Width = 1600
     Height = 21
     Align = alTop
     BevelOuter = bvNone
@@ -3461,7 +3461,7 @@ object fraModelo: TfraModelo
         'as    Ferramentas   Ajuda'
     end
     object imgMinimizar: TcxImage
-      Left = 1044
+      Left = 1495
       Top = 0
       Align = alRight
       AutoSize = True
@@ -3508,7 +3508,7 @@ object fraModelo: TfraModelo
       Transparent = True
     end
     object imgRestaurar: TcxImage
-      Left = 1079
+      Left = 1530
       Top = 0
       Align = alRight
       AutoSize = True
@@ -3561,7 +3561,7 @@ object fraModelo: TfraModelo
       Transparent = True
     end
     object imgFechar: TcxImage
-      Left = 1114
+      Left = 1565
       Top = 0
       Cursor = crHandPoint
       Align = alRight
