@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    /*PADRAO*/
+    body {
+      font-family: 'UOLText',Arial,Helvetica,sans-serif;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      text-shadow: 0 0 1px transparent;
+    }
+
+    body, h1, div, p, ul, li, span, a, fieldset, form, button, input {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      color: #000;
+      outline: 0;
+    }
+
+    * { box-sizing: border-box; border:0; }
+    /*PADRAO*/
+
+    /* CONTAINER2 */
+    .container {
+      width:100%;
+      margin: 0;
+      opacity: 0;
+      background: #FFF;
+
+    }
+    a {
+      text-decoration: none;
+    }
+    /* CONTAINER2 */
+
+    /* HEADER */
+
+      /* TITULO */
+      .title-container {
+        float: left;
+        padding-top: 33px;
+        display: inline-block;
+        margin-right: 3px;
+        max-width: 100%;
+        clear: both;
+      }
+      .title-container img {
+        width: 100%;
+      }
+      /* TITULO */
+
+      /* BUSCA */
+      .form-search {
+        width: 398px;
+        position: relative;
+        display: inline-block;
+        float: right;
+        margin-top: 30px;
+        max-width: 50%;
+      }
+      .form-search-input {
+        height: 38px;
+        line-height: 38px;
+        width: 100%;
+        border: 1px solid #e6e6e6;
+        text-indent: 10px;
+        color: #999;
+        font-weight: 300;
+        font-size: 100%;
+        vertical-align: baseline;
+        font-family: sans-serif;
+      }
+      .form-search-button {
+        position: absolute;
+        right: 0; top: 0;
+        height: 38px;
+        width: 60px;
+        background: #f3f2f1 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAWCAMAAAAYXScKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANVQTFRFEREm8/Lc89Wk8/LqERFXpVcRwerxurm5pdzxXqTVZS0RwYhC6/LxEVekEUKIrOPxuo9e88eP5OrxwYgmwfLxESaINF6PQhERO3rAERFlrGUR1vLxNCYROxER8/LjSSYRXiYRwZ1z1qRXwdXj8+rcwdXqSWWW3ce5icfxbEIRusDO3c7AETt68+rVnlARJhER3fLxusfV8/LV68eIJkmPZaTV68CI3aRXutXqJnq5yOrxERFewYhJSXOdutzjJojA5NXHrNzx89WyutzxEREtERER8/LxTpitZAAAAL1JREFUeNp0kecSwiAQhC+JBkti19h77713Pd7/kSSSMKa4f2C+gWXZA+on4ItyJ2SRclIpUUYmyL1+qBxBS++NoHIdobundNKoIYQtKgXtvXkpEOI0WcG8ZvltDbxxmsZC3H67WsRsxqTMQC+JSE1uAcsp6nNBdwj9/2f9fR0ZVgYeNHfe50Dk/f7t0qG0zf6GY9XbA1NM9XR2jXJs9zsiZMj6VTgG1xRMvD66KVXOs9MDvEPrtSj4TvMjwACGKGT+VbnkigAAAABJRU5ErkJggg==') no-repeat center center;
+        border-bottom: 2px solid #e6e6e6;
+        cursor: pointer;
+      }
+      /* BUSCA */
+
+    /* HEADER */
+
+    /* PRODUTO */
+    .produtos-content {
+      clear: both;
+      padding-top: 30px;
+      overflow: hidden;
+      text-align: justify;
+      height: 249px;
+    }
+
+    .produtos-content:after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+    }
+
+    .item {
+      display: inline-block;
+      width: 120px;
+      margin: 0 auto;
+      margin-bottom: 18px;
+    }
+
+    .item span {
+      display: block; text-align: center; color: #666;
+    }
+
+    .img-container {
+      border: 1px solid #e6e6e6;
+      height: 120px; width: 120px;
+      padding-top: 3px;
+      margin-bottom: 18px;
+    }
+
+    .item-title {
+      font-size: 13.5px; padding-top: 1px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      overflow: hidden;
+      max-height: 15px;
+      text-transform: uppercase;
+    }
+    .item-desc {
+      overflow: hidden;
+      max-height: 28px;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 15px;
+      height: 28px;
+    }
+    .item-price {
+      font-weight: bold;
+      font-size: 14px;
+      color: #000 !important;
+    }
+    /* PRODUTO */
+
+    /* LISTA FOOTER */
+    .subs {
+      border-top-width: 1px;
+      border-style: solid;
+      padding: 18px 0 0;
+      overflow: hidden;
+      list-style: none;
+      border-color: #e6e6e6;
+        margin-top: 18px;
+    }
+    .subs li:first-child {
+      border: 0;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .subs li {
+      border-left: 1px solid #ccc;
+      margin-left: 10px;
+      padding-left: 10px;
+      float: left;
+    }
+    .subs li a {
+      line-height: 18px; font-size: 13px; color: #666;
+    }
+    /* LISTA FOOTER */
+  </style>
+  <!-- TEMPLATE HEADER BEGIN
+  {
+    SERIALIZED: { mode: 'true' },
+    NUMBER_SLIDES: { min: '7', max: '7' },
+    link: { 'type': '>', 'field': 'LINK', 'label': 'URL', 'message': 'URL de destino' },
+    imagem: { 'type': '@', 'field': 'IMAGEM', 'label': 'Imagem', 'message': 'URL da imagem do produto' },
+    nome: { 'type': '*', 'field': 'NOME', 'label': 'Nome', 'message': 'Nome do produto' },
+    categoria: { 'type': '*', 'field': 'CATEGORIA', 'label': 'Categoria', 'message': 'Categoria do produto' },
+    preco_original: { 'type': '*', 'field': 'PRECO_ORIGINAL', 'label': 'Preco', 'message': 'Preco Original' },
+    preco_promocional: { 'type': '*', 'field': 'PRECO_PROMOCIONAL', 'label': 'Preco Promocional', 'message': 'Preco Promocional' },
+    numero_parcelas: { 'type': '*', 'field': 'NUMERO_PARCELAS', 'label': 'Numero Parcelas', 'message': 'Numero de parcelas' },
+    valor_parcelas: { 'type': '*', 'field': 'VALOR_PARCELAS', 'label': 'Valor Parcelas', 'message': 'Valor das parcelas' },
+    sku: { 'type': '*', 'field': 'SKU', 'label': 'ID', 'message': 'ID do produto' }
+  }
+  TEMPLATE HEADER END -->
+
+<!--DYNAD_AUTO_INSERTED--><script>
+    (function() {
+        if (typeof JSON !== "object") {
+            JSON = {};
+            JSON.parse = JSON.parse || function(o) {
+                return eval('(' + o + ')')
+            };
+            JSON.stringify = JSON.stringify || function(o) {
+                var n;
+                var a;
+                var t = typeof(o);
+                var json = [];
+                if (t != 'object' || o === null) {
+                    if (t == "string") {
+                        o = '"' + o + '"'
+                    }
+                    return String(o)
+                } else {
+                    a = (o && o.constructor == Array);
+                    for (var key in o) {
+                        n = o[key];
+                        t = typeof(n);
+                        if (t == "string") {
+                            n = '"' + n.replace(/["]/g, "\\\"") + '"'
+                        } else if (t == "object" && n !== null) {
+                            n = JSON.stringify(n)
+                        }
+                        json.push((a ? "" : '"' + key + '":') + String(n))
+                    }
+                    return (a ? "[" : "{") + String(json) + (a ? "]" : "}")
+                }
+            }
+        }
+        "document" in self && ("classList" in document.createElement("_") ? ! function() {
+            "use strict";
+            var t = document.createElement("_");
+            if (t.classList.add("c1", "c2"), !t.classList.contains("c2")) {
+                var e = function(t) {
+                    var e = DOMTokenList.prototype[t];
+                    DOMTokenList.prototype[t] = function(t) {
+                        var n, i = arguments.length;
+                        for (n = 0; i > n; n++) t = arguments[n], e.call(this, t)
+                    }
+                };
+                e("add"), e("remove")
+            }
+            if (t.classList.toggle("c3", !1), t.classList.contains("c3")) {
+                var n = DOMTokenList.prototype.toggle;
+                DOMTokenList.prototype.toggle = function(t, e) {
+                    return 1 in arguments && !this.contains(t) == !e ? e : n.call(this, t)
+                }
+            }
+            t = null
+        }() : ! function(t) {
+            "use strict";
+            if ("Element" in t) {
+                var e = "classList",
+                    n = "prototype",
+                    i = t.Element[n],
+                    s = Object,
+                    r = String[n].trim || function() {
+                        return this.replace(/^\s+|\s+$/g, "")
+                    },
+                    o = Array[n].indexOf || function(t) {
+                        for (var e = 0, n = this.length; n > e; e++)
+                            if (e in this && this[e] === t) return e;
+                        return -1
+                    },
+                    a = function(t, e) {
+                        this.name = t, this.code = DOMException[t], this.message = e
+                    },
+                    c = function(t, e) {
+                        if ("" === e) throw new a("SYNTAX_ERR", "An invalid or illegal string was specified");
+                        if (/\s/.test(e)) throw new a("INVALID_CHARACTER_ERR", "String contains an invalid character");
+                        return o.call(t, e)
+                    },
+                    l = function(t) {
+                        for (var e = r.call(t.getAttribute("class") || ""), n = e ? e.split(/\s+/) : [], i = 0, s = n.length; s > i; i++) this.push(n[i]);
+                        this._updateClassName = function() {
+                            t.setAttribute("class", this.toString())
+                        }
+                    },
+                    u = l[n] = [],
+                    f = function() {
+                        return new l(this)
+                    };
+                if (a[n] = Error[n], u.item = function(t) {
+                        return this[t] || null
+                    }, u.contains = function(t) {
+                        return t += "", -1 !== c(this, t)
+                    }, u.add = function() {
+                        var t, e = arguments,
+                            n = 0,
+                            i = e.length,
+                            s = !1;
+                        do t = e[n] + "", -1 === c(this, t) && (this.push(t), s = !0); while (++n < i);
+                        s && this._updateClassName()
+                    }, u.remove = function() {
+                        var t, e, n = arguments,
+                            i = 0,
+                            s = n.length,
+                            r = !1;
+                        do
+                            for (t = n[i] + "", e = c(this, t); - 1 !== e;) this.splice(e, 1), r = !0, e = c(this, t); while (++i < s);
+                        r && this._updateClassName()
+                    }, u.toggle = function(t, e) {
+                        t += "";
+                        var n = this.contains(t),
+                            i = n ? e !== !0 && "remove" : e !== !1 && "add";
+                        return i && this[i](t), e === !0 || e === !1 ? e : !n
+                    }, u.toString = function() {
+                        return this.join(" ")
+                    }, s.defineProperty) {
+                    var h = {
+                        get: f,
+                        enumerable: !0,
+                        configurable: !0
+                    };
+                    try {
+                        s.defineProperty(i, e, h)
+                    } catch (g) {
+                        -2146823252 === g.number && (h.enumerable = !1, s.defineProperty(i, e, h))
+                    }
+                } else s[n].__defineGetter__ && i.__defineGetter__(e, f)
+            }
+        }(self));
+        if (!document.querySelectorAll && document.createStyleSheet) {
+            (function() {
+                var style = document.createStyleSheet(),
+                    select = function(selector, maxCount) {
+                        var all = document.all,
+                            l = all.length,
+                            i, resultSet = [];
+                        style.addRule(selector, "foo:bar");
+                        for (i = 0; i < l; i += 1) {
+                            if (all[i].currentStyle.foo === "bar") {
+                                resultSet.push(all[i]);
+                                if (resultSet.length > maxCount) {
+                                    break;
+                                }
+                            }
+                        }
+                        style.removeRule(0);
+                        return resultSet;
+                    };
+                if (document.querySelectorAll || document.querySelector) {
+                    return;
+                }
+                document.querySelectorAll = function(selector) {
+                    return select(selector, Infinity);
+                };
+                document.querySelector = function(selector) {
+                    return select(selector, 1)[0] || null;
+                };
+            }());
+        }
+
+        function e() {
+            this.r = null
+        }
+
+        function t(e) {
+            try {
+                window["DYNADAPI_DATA"] = JSON.parse(e.data);
+                if (!window["DYNADAPI_DATA"].clickTAG) return;
+            } catch (t) {
+                if (typeof console !== "undefined") {
+                    //console.log('DynAd API error: ' + t.message);   
+                }
+                return
+            }
+            if (window["DYNADAPI"].r != null) clearTimeout(window["DYNADAPI"].r);
+            window["DYNADAPI"].onload()
+        }
+        window.load = function() {
+            window.onload()
+        };
+        if (window.load) {
+            window.onload = function() {
+                window["DYNADAPI"].init()
+            }
+        }
+        e.prototype = {
+            contructor: e,
+            setBackup: function(e) {
+                var t = false;
+                try {
+                    if (typeof window["DYNADAPI_DATA"] === "undefined" || JSON.stringify(window["DYNADAPI_DATA"]) == "{}" || window["DYNADAPI_DATA"]["data"] === "undefined" || JSON.stringify(window["DYNADAPI_DATA"]["data"]) == "[{}]") t = true
+                } catch (n) {
+                    t = true
+                }
+                if (t) window["DYNADAPI_DATA"] = typeof e === "object" ? e : JSON.parse(e)
+            },
+            init: function() {
+                this.r = setTimeout(function() {
+                    window["DYNADAPI"].onload()
+                }, 3e3)
+            },
+            getClickTAG: function() {
+                return window["DYNADAPI_DATA"]["clickTAG"]
+            },
+            getClickTAG2: function() {
+                return window["DYNADAPI_DATA"]["clickTAG2"]
+            },
+            getClickTAG3: function() {
+                return window["DYNADAPI_DATA"]["clickTAG3"]
+            },
+            getClickTAG4: function() {
+                return window["DYNADAPI_DATA"]["clickTAG4"]
+            },
+            getClickTAG5: function() {
+                return window["DYNADAPI_DATA"]["clickTAG5"]
+            },
+            getTarget: function() {
+                return window["DYNADAPI_DATA"]["target"]
+            },
+            getDataLength: function() {
+                return window["DYNADAPI_DATA"]["data"].length
+            },
+            getDataItem: function(e) {
+                return window["DYNADAPI_DATA"]["data"][e]
+            },
+            getProperty: function(e) {
+                return window["DYNADAPI_DATA"][e]
+            }
+        };
+        if (window.addEventListener) {
+            window.addEventListener("message", t, false)
+        } else if (window.attachEvent) {
+            window.attachEvent("onmessage", t)
+        }
+        window["DYNADAPI"] = new e;
+        var n = null
+    })()
+</script><!--END DYNAD_AUTO_INSERTED-->
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="shopping-produtos-uol-header">
+            <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/" target="_parent" class="title-container">
+            <span class="title">
+              <img src="data:image/png;base64,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" alt="logo"/>
+            </span>
+          </a>
+            <form target="_blank" action="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas" method="get" class="form-search module" data-empty-url="http://shopping.uol.com.br/" accept-charset="ISO-8859-1" onsubmit="if(!window.retiraacento) window['retiraacento'] = function (p){ca='áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ';sa='aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC'; nova='';for(i=0;i<p.length;i++){if(ca.search(p.substr(i,1))>=0){nova+=sa.substr(ca.search(p.substr(i,1)),1);}else{nova+=p.substr(i,1);}}return nova;}; window.open(this.action + '?kw=' + window.retiraacento(document.querySelector('.q').value)); return false;">
+                <fieldset>
+                  <input type="text" class="form-search-input q" name="kw" placeholder="Busque produtos">
+                  <button type="submit" class="form-search-button">
+                    <i class="icon icon-search"></i></button>
+                </fieldset>
+            </form>
+        </div>
+        <!-- HEADER -->
+
+        <!-- PRODUTOS -->
+        <div class="produtos-content">
+      <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad1&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/tv" class="item">
+        <span class="img-container">
+          <img width="112" height="112" src="" alt="" title="">
+        </span>
+        <span class="item-title">TV LED</span>
+        <span class="item-desc">Wi-fi, 3D, HDMI, Full HD a partir de</span>
+        <span class="item-price">CONFIRA</span>
+      </a>
+      <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad2&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/geladeira" class="item">
+        <span class="img-container">
+          <img width="112" height="112" src="" alt="" title="">
+        </span>
+        <span class="item-title">GELADEIRA</span>
+        <span class="item-desc">Duplex, side by side, frost free a partir de</span>
+        <span class="item-price">CONFIRA</span>
+      </a>
+      <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad3&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/sapatenis" class="item">
+        <span class="img-container">
+          <img width="112" height="112" src="" alt="" title="">
+        </span>
+        <span class="item-title">SAPATÊNIS</span>
+        <span class="item-desc">Latego Marrone. Para ocasiões casuais</span>
+        <span class="item-price">CONFIRA</span>
+      </a>
+      <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad4&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/churrasqueira" class="item">
+        <span class="img-container">
+          <img width="112" height="112" src="" alt="" title="">
+        </span>
+        <span class="item-title">CHURRASQUEIRA</span>
+        <span class="item-desc">Diversos artigos a partir de</span>
+        <span class="item-price">CONFIRA</span>
+      </a>
+      <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad5&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/celular-e-smartphone.html?kw=motorola" class="item">
+        <span class="img-container">
+          <img width="112" height="112" src="" alt="" title="">
+        </span>
+        <span class="item-title">MOTO G</span>
+        <span class="item-desc">3G, wi-fi, Android 4.3, Dual chip a partir de</span>
+        <span class="item-price">CONFIRA</span>
+      </a>
+      <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad6&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/frigobar" class="item">
+        <span class="img-container">
+          <img width="112" height="112" src="" alt="" title="">
+        </span>
+        <span class="item-title">FRIGOBAR</span>
+        <span class="item-desc">Mais sofisticação, a partir de</span>
+        <span class="item-price">CONFIRA</span>
+      </a>
+      <a href="http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad7&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/impressora" class="item">
+        <span class="img-container">
+          <img width="112" height="112" src="" alt="" title="">
+        </span>
+        <span class="item-title">IMPRESSORA</span>
+        <span class="item-desc">De vários modelos e marcas</span>
+        <span class="item-price">CONFIRA</span>
+      </a>
+    </div>
+    <!-- PRODUTOS -->
+
+    <!-- LISTA FOOTER -->
+    <ul class="subs">
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=celular-e-smartphone">CELULARES</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=tv">SMART TV</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=geladeira">GELADEIRA</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=perfume">PERFUME</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=home-theater">HOME THEATER</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=fogao">FOGÃO</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=notebook">NOTEBOOK</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=tenis">TÊNIS</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=bicicleta">BICICLETA</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=tablet">TABLET</a>
+        </li>
+        <li>
+            <a target="_parent" href="http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL_form&redir=http://shopping.uol.com.br/vitrine-ofertas?kw=maquina-de-lavar-roupas">LAVADORA DE ROUPAS</a>
+        </li>
+    </ul>
+    <!-- LISTA FOOTER -->
+    </div>
+
+  <script type="text/javascript">
+    DYNADAPI.onload = function() {
+      try {
+        //POST MESSAGE PARA O PLUGIN TM
+        window.parent.postMessage('{"message":"vitrine carregada", "placementId":"121587"}', '*');
+
+        DYNADAPI.setBackup('{"target":"_blank","clickTAG":"","data":[{"NOME":"Wi-fi, 3D, HDMI, Full HD a partir de","CATEGORIA":"TV LED","LINK":"http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad1&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/tv","PRECO_PROMOCIONAL":"","IMAGEM":"http://pubshop.img.uol.com.br/canais2014/tv02.jpg"},{"NOME":"Duplex, side by side, frost free a partir de","CATEGORIA":"GELADEIRA","LINK":"http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad2&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/geladeira","PRECO_PROMOCIONAL":"","IMAGEM":"http://pubshop.img.uol.com.br/canais2014/geladeira5.jpg"},{"NOME":"Latego Marrone. Para ocasiões casuais","CATEGORIA":"SAPATÊNIS","LINK":"http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad3&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/sapatenis","PRECO_PROMOCIONAL":"","IMAGEM":"http://pubshop.img.uol.com.br/canais2014/sapatenis_moscoloni.jpg"},{"NOME":"Diversos artigos a partir de","CATEGORIA":"CHURRASQUEIRA","LINK":"http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad4&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/churrasqueira","PRECO_PROMOCIONAL":"","IMAGEM":"http://pubshop.img.uol.com.br/canais2013/churrasqueira6.jpg"},{"NOME":"3G, wi-fi, Android 4.3, Dual chip a partir de","CATEGORIA":"MOTO G","LINK":"http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad5&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/celular-e-smartphone.html?kw=motorola","PRECO_PROMOCIONAL":"","IMAGEM":"http://pubshop.img.uol.com.br/canais2014/moto_g2g.jpg"},{"NOME":"Mais sofisticação, a partir de","CATEGORIA":"FRIGOBAR","LINK":"http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad6&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/frigobar","PRECO_PROMOCIONAL":"","IMAGEM":"http://pubshop.img.uol.com.br/canais2014/frigobar4.jpg"},{"NOME":"De vários modelos e marcas","CATEGORIA":"IMPRESSORA","LINK":"http://click.uol.com.br/?rf=homec-horizontal-shopping-modulo1-item-dynad7&pos=mod-18;shopping&u=http://clicklogger.rm.uol.com.br/?prd=97&msr=Cliques%20de%20Origem:1&oper=11&grp=src:12;size:19;chn:0;creative:box_ShoppingUOL&redir=http://shopping.uol.com.br/impressora","PRECO_PROMOCIONAL":"","IMAGEM":"http://pubshop.img.uol.com.br/canais2014/impressora2.jpg"}]}');
+        var clickTAG = DYNADAPI.getClickTAG();
+        var target = DYNADAPI.getTarget();
+
+        var itens = document.querySelector('.produtos-content');
+        for(var i = 0; i < DYNADAPI.getDataLength(); i++){
+          var itemData = DYNADAPI.getDataItem(i);
+          itemData.NOME = itemData.NOME.replace(/&nbsp;/gi, ' ');
+          itemData.CATEGORIA = itemData.CATEGORIA.replace(/&nbsp;/gi, ' ');
+          var item = itens.children[i];
+          if(!item) break;
+          item.querySelectorAll('img')[0].setAttribute('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi/P//PwMSYGJABaTyAQIMAOr2Awe5ZbXMAAAAAElFTkSuQmCC");
+          item.querySelectorAll('img')[0].setAttribute('src', itemData.IMAGEM+'?hash=5qhM26hBy-mnB_b2c7CLdQ');
+          item.querySelectorAll('img')[0].setAttribute('alt', itemData.CATEGORIA.replace('+', '-'));
+          item.querySelectorAll('img')[0].setAttribute('title', itemData.CATEGORIA);
+          item.querySelectorAll('.item-title')[0].innerHTML = itemData.CATEGORIA;
+          item.querySelectorAll('.item-desc')[0].innerHTML = itemData.NOME;
+          if(itemData.PRECO_PROMOCIONAL != '') item.querySelectorAll('.item-price')[0].innerHTML = 'R$' + itemData.PRECO_PROMOCIONAL;
+          else item.querySelectorAll('.item-price')[0].innerHTML = 'CONFIRA';
+          item.setAttribute('target', '_parent');
+          if ( itemData.LINK.indexOf('r64=') != 0 ) item.setAttribute('href', clickTAG + 'r=' + itemData.LINK);
+          else  item.setAttribute('href', clickTAG + itemData.LINK);
+        }
+        //PERSONALIZA OS LINKS DO FOOTER COM CLICKTAG
+        var footerLinks = [];
+        var footer = document.querySelectorAll('.subs a');
+        for ( var i = 0; i < footer.length; i++) {
+          footerLinks.push(footer[i]);
+        }
+        //ADICIONA O LINK DO LOGO A LISTA DE LINKS COM CLICKTAG
+        footerLinks.push(document.querySelectorAll('.title-container')[0]);
+        for ( var i = 0; i < footerLinks.length; i++ ) {
+          var linkAtual = ''+ footerLinks[i].getAttribute('href');
+          if ( linkAtual.indexOf('r64=') != 0 )
+            footerLinks[i].setAttribute('href', clickTAG + 'r=' + encodeURIComponent(linkAtual));
+          else
+            footerLinks[i].setAttribute('href', clickTAG + linkAtual);
+        }
+      } catch(erro){}
+      document.querySelector('.container').style.opacity = '1';
+    }
+  </script>
+</body>
+</html>
