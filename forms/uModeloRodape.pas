@@ -20,13 +20,10 @@ type
   TfraModeloRodape = class(TFrame)
     pnlAHMDashboardRodape: TPanel;
     Image2: TImage;
-    cxLabel1: TcxLabel;
-    cxImage1: TcxImage;
-    cxLabel2: TcxLabel;
-    cxLabel3: TcxLabel;
-    cxLabel4: TcxLabel;
-    Shape1: TShape;
-    Shape2: TShape;
+    lblHospedagem: TcxLabel;
+    lblDesenvolvimento: TcxLabel;
+    cxlblUsuario: TcxLabel;
+    imgProdam: TImage;
   private
     { Private declarations }
   public

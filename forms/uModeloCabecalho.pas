@@ -1,4 +1,4 @@
-unit uModelo;
+unit uModeloCabecalho;
 
 interface
 
@@ -14,11 +14,11 @@ uses
   dxSkinOffice2010Blue, dxSkinOffice2010Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, StdCtrls, jpeg, cxImage, ExtCtrls, Menus;
+  dxSkinXmas2008Blue, StdCtrls, jpeg, cxImage, ExtCtrls, Menus, Buttons;
 
 type
   TfraModeloCabecalho = class(TFrame)
-    pnlAHMDashboardDireito: TPanel;
+    pnlAHMIndicador: TPanel;
     imgAHM: TcxImage;
     imgLayoutCentro: TcxImage;
     imgLogoSaoPaulo: TcxImage;
@@ -29,13 +29,14 @@ type
     imgMinimizar: TcxImage;
     imgRestaurar: TcxImage;
     imgFechar: TcxImage;
-    imgHelp: TcxImage;
-    imgFerramentas: TcxImage;
-    imgPerfil: TcxImage;
-    txtNomeUsuario: TStaticText;
     txt1: TStaticText;
+    pnlModeloCabecalho: TPanel;
+    StaticText1: TStaticText;
+    cxImage1: TcxImage;
+    imgFerramentas: TcxImage;
     procedure img4Click(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
+    procedure FrameResize(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +44,8 @@ type
   end;
 
 implementation
+
+uses uPainelPrincipal;
 
 {$R *.dfm}
 
@@ -54,6 +57,16 @@ end;
 procedure TfraModeloCabecalho.imgFecharClick(Sender: TObject);
 begin
      Application.Terminate;
+end;
+
+procedure TfraModeloCabecalho.FrameResize(Sender: TObject);
+begin
+    if Screen.Width < 1600 then
+    begin
+         imgLayoutCentro.Properties.Stretch := True;
+    end;
+
+
 end;
 
 end.

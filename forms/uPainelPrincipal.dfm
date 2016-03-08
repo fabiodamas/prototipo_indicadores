@@ -16,24 +16,53 @@ object frmPainelPrincipal: TfrmPainelPrincipal
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  inline fraCabecalho: TfraModelo
+  inline fraCabecalho: TfraModeloCabecalho
     Left = 0
     Top = 0
     Width = 1600
-    Height = 234
+    Height = 247
     Align = alTop
     TabOrder = 0
-    inherited pnlAHMDashboardDireito: TPanel
+    inherited pnlAHMIndicador: TPanel
+      Width = 1600
+      Height = 120
+      inherited imgLayoutDireito: TcxImage
+        Left = 1279
+      end
       inherited imgAHM: TcxImage
         Cursor = crHandPoint
+        Height = 120
       end
+      inherited imgLogoSaoPaulo: TcxImage
+        Left = 1048
+      end
+      inherited imgFerramentas: TcxImage
+        Visible = True
+        OnClick = imgFerramentasClick
+      end
+    end
+    inherited pnlBarraMenu: TPanel
+      Width = 1600
+      inherited imgMinimizar: TcxImage
+        Left = 1495
+      end
+      inherited imgRestaurar: TcxImage
+        Left = 1530
+      end
+      inherited imgFechar: TcxImage
+        Left = 1565
+      end
+    end
+    inherited pnlModeloCabecalho: TPanel
+      Top = 220
+      Width = 1600
     end
   end
   object scoFundo: TAdvScrollBox
     Left = 0
-    Top = 282
+    Top = 295
     Width = 705
-    Height = 470
+    Height = 500
     HorzScrollBar.Visible = False
     Align = alLeft
     BevelEdges = []
@@ -47,7 +76,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       Left = 0
       Top = 0
       Width = 705
-      Height = 470
+      Height = 500
       ActivePage = tabInternacao
       Align = alClient
       Font.Charset = ANSI_CHARSET
@@ -57,7 +86,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ClientRectBottom = 466
+      ClientRectBottom = 496
       ClientRectLeft = 4
       ClientRectRight = 701
       ClientRectTop = 30
@@ -68,7 +97,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
           Left = 0
           Top = 0
           Width = 577
-          Height = 436
+          Height = 466
           Align = alLeft
           BevelOuter = bvNone
           Color = clWhite
@@ -116,6 +145,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
               Font.Name = 'MS Sans Serif'
               Font.Style = []
               ManagerFont = False
+              PopupMenu = popConfiguracoes
               AllowFloating = True
               AutoHide = False
               Caption = 'Entradas Efetuadas'
@@ -1084,25 +1114,9 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       end
     end
   end
-  object txt1: TStaticText
-    Left = 50
-    Top = 67
-    Width = 146
-    Height = 18
-    Caption = 'http://dashboard-ahm.prodam'
-    Color = clWhite
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Arial'
-    Font.Style = []
-    ParentColor = False
-    ParentFont = False
-    TabOrder = 2
-  end
   object Panel1: TPanel
     Left = 0
-    Top = 234
+    Top = 247
     Width = 1600
     Height = 48
     Align = alTop
@@ -1114,7 +1128,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     object cxlbl1: TcxLabel
       Left = 6
       Top = -4
@@ -1175,13 +1189,13 @@ object frmPainelPrincipal: TfrmPainelPrincipal
   end
   object advpnl2: TAdvPanel
     Left = 713
-    Top = 282
+    Top = 295
     Width = 887
-    Height = 470
+    Height = 500
     Align = alClient
     BevelInner = bvLowered
     Color = clWhite
-    TabOrder = 4
+    TabOrder = 3
     UseDockManager = True
     Version = '1.9.0.3'
     Caption.Color = clHighlight
@@ -1208,45 +1222,115 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       TabOrder = 0
     end
   end
+  object cxspltr1: TcxSplitter
+    Left = 705
+    Top = 295
+    Width = 8
+    Height = 500
+    Control = scoFundo
+  end
   inline fraModeloRodape1: TfraModeloRodape
     Left = 0
-    Top = 752
+    Top = 795
     Width = 1600
-    Height = 86
+    Height = 43
     Align = alBottom
     Color = clWhite
     ParentColor = False
     TabOrder = 5
     inherited pnlAHMDashboardRodape: TPanel
-      Width = 1583
-      Height = 94
+      Top = 13
+      Width = 1600
+      Align = alBottom
       inherited Image2: TImage
-        Width = 1583
+        Width = 1511
       end
-      inherited cxLabel1: TcxLabel
+      inherited imgProdam: TImage
+        Left = 1511
+      end
+      inherited lblHospedagem: TcxLabel
+        Left = 1403
         Style.IsFontAssigned = True
       end
-      inherited cxImage1: TcxImage
-        Left = 1502
-      end
-      inherited cxLabel2: TcxLabel
-        Left = 1404
+      inherited lblDesenvolvimento: TcxLabel
+        Left = 1402
         Style.IsFontAssigned = True
       end
-      inherited cxLabel3: TcxLabel
-        Left = 1404
+      inherited cxlblUsuario: TcxLabel
         Style.IsFontAssigned = True
-      end
-      inherited cxLabel4: TcxLabel
-        Style.IsFontAssigned = True
+        AnchorY = 15
       end
     end
   end
-  object cxspltr1: TcxSplitter
-    Left = 705
-    Top = 282
-    Width = 8
-    Height = 470
-    Control = scoFundo
+  object popConfiguracoes: TAdvPopupMenu
+    Version = '2.5.3.0'
+    Left = 1137
+    Top = 330
+    object Configuraes1: TMenuItem
+      Caption = 'Configura'#231#245'es'
+    end
+    object TMenuItem
+    end
+  end
+  object mslEstilo: TAdvMenuStyler
+    AntiAlias = aaNone
+    Background.Position = bpCenter
+    SelectedItem.Font.Charset = DEFAULT_CHARSET
+    SelectedItem.Font.Color = clWindowText
+    SelectedItem.Font.Height = -12
+    SelectedItem.Font.Name = 'Segoe UI'
+    SelectedItem.Font.Style = []
+    SelectedItem.NotesFont.Charset = DEFAULT_CHARSET
+    SelectedItem.NotesFont.Color = clWindowText
+    SelectedItem.NotesFont.Height = -9
+    SelectedItem.NotesFont.Name = 'Segoe UI'
+    SelectedItem.NotesFont.Style = []
+    RootItem.Font.Charset = DEFAULT_CHARSET
+    RootItem.Font.Color = clMenuText
+    RootItem.Font.Height = -12
+    RootItem.Font.Name = 'Segoe UI'
+    RootItem.Font.Style = []
+    Glyphs.SubMenu.Data = {
+      5A000000424D5A000000000000003E0000002800000004000000070000000100
+      0100000000001C0000000000000000000000020000000200000000000000FFFF
+      FF0070000000300000001000000000000000100000003000000070000000}
+    Glyphs.Check.Data = {
+      7E000000424D7E000000000000003E0000002800000010000000100000000100
+      010000000000400000000000000000000000020000000200000000000000FFFF
+      FF00FFFF0000FFFF0000FFFF0000FFFF0000FDFF0000F8FF0000F07F0000F23F
+      0000F71F0000FF8F0000FFCF0000FFEF0000FFFF0000FFFF0000FFFF0000FFFF
+      0000}
+    Glyphs.Radio.Data = {
+      7E000000424D7E000000000000003E0000002800000010000000100000000100
+      010000000000400000000000000000000000020000000200000000000000FFFF
+      FF00FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FC3F0000F81F0000F81F
+      0000F81F0000F81F0000FC3F0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF
+      0000}
+    SideBar.Font.Charset = DEFAULT_CHARSET
+    SideBar.Font.Color = clWhite
+    SideBar.Font.Height = -19
+    SideBar.Font.Name = 'Tahoma'
+    SideBar.Font.Style = [fsBold, fsItalic]
+    SideBar.Image.Position = bpCenter
+    SideBar.Background.Position = bpCenter
+    SideBar.SplitterColorTo = clBlack
+    Separator.GradientType = gtBoth
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clMenuText
+    Font.Height = -12
+    Font.Name = 'Estilo'
+    Font.Style = []
+    NotesFont.Charset = DEFAULT_CHARSET
+    NotesFont.Color = clGray
+    NotesFont.Height = -9
+    NotesFont.Name = 'Segoe UI'
+    NotesFont.Style = []
+    ButtonAppearance.CaptionFont.Charset = DEFAULT_CHARSET
+    ButtonAppearance.CaptionFont.Color = clWindowText
+    ButtonAppearance.CaptionFont.Height = -11
+    ButtonAppearance.CaptionFont.Name = 'Segoe UI'
+    ButtonAppearance.CaptionFont.Style = []
+    Left = 1033
+    Top = 306
   end
 end

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, uModelo, Menus, cxGraphics, cxControls, cxLookAndFeels,
+  Dialogs, uModeloCabecalho, Menus, cxGraphics, cxControls, cxLookAndFeels,
   cxLookAndFeelPainters, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel,
   dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinFoggy, dxSkinGlassOceans,
   dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
@@ -16,20 +16,20 @@ uses
   dxSkinXmas2008Blue, dxSkinscxPCPainter, ExtCtrls, cxPC, AdvScrollBox,
   cxSplitter, AdvPanel, StdCtrls, dxDockControl, dxDockPanel, cxContainer,
   cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar, DateUtils,
-  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cefvcl, uModeloRodape;
+  jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cefvcl, uModeloRodape,
+  AdvMenus;
 
 // ceflib, cefvcl, Buttons, ActnList, Menus, ComCtrls;
 
 type
   TfrmPainelPrincipal = class(TForm)
-    fraCabecalho: TfraModelo;
+    fraCabecalho: TfraModeloCabecalho;
     scoFundo: TAdvScrollBox;
     pco1: TcxPageControl;
     tabInternacao: TcxTabSheet;
     tabAmbulatorio: TcxTabSheet;
     tabPacientes: TcxTabSheet;
     advpnl1: TAdvPanel;
-    txt1: TStaticText;
     dxDockPanel1: TdxDockPanel;
     dxdckst1: TdxDockSite;
     dxLayoutDockSite1: TdxLayoutDockSite;
@@ -75,10 +75,14 @@ type
     cdtDataFinal: TcxDateEdit;
     advpnl2: TAdvPanel;
     Chromium1: TChromium;
-    fraModeloRodape1: TfraModeloRodape;
     cxspltr1: TcxSplitter;
+    popConfiguracoes: TAdvPopupMenu;
+    mslEstilo: TAdvMenuStyler;
+    Configuraes1: TMenuItem;
+    fraModeloRodape1: TfraModeloRodape;
     procedure FormShow(Sender: TObject);
     procedure fraCabecalhocxImage6Click(Sender: TObject);
+    procedure imgFerramentasClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -91,12 +95,17 @@ var
 implementation
 
 uses
-  uBaseDados;
+  uBaseDados, uConfiguracoes;
 
 {$R *.dfm}
 
 procedure TfrmPainelPrincipal.FormShow(Sender: TObject);
 begin
+  fraModeloRodape1.lblHospedagem.Left :=  fraModeloRodape1.imgProdam.Left - fraModeloRodape1.lblHospedagem.Width - 2;
+  fraModeloRodape1.lblDesenvolvimento.Left :=  fraModeloRodape1.imgProdam.Left - fraModeloRodape1.lblDesenvolvimento.Width - 2;
+  fraCabecalho.imgFerramentas.Left := Self.Width - fraCabecalho.imgFerramentas.Width - 5;
+
+
   dmBaseDados.conConexao.Connect;
 
   cbbHospitais.Properties.Items.Clear;
@@ -137,5 +146,11 @@ begin
      Application.Terminate;
 end;
 
+procedure TfrmPainelPrincipal.imgFerramentasClick(Sender: TObject);
+begin
+     frmConfiguracoes.showmodal;
+end;
+
 end.
+
 

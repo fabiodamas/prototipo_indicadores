@@ -2,18 +2,21 @@ program Prototipo;
 
 uses
   Forms,
-  uModelo in 'forms\uModelo.pas' {fraModelo: TFrame},
+  uModeloCabecalho in 'forms\uModeloCabecalho.pas' {fraModeloCabecalho: TFrame},
   uPainelPrincipal in 'forms\uPainelPrincipal.pas' {frmPainelPrincipal},
   uBaseDados in 'forms\uBaseDados.pas' {dmBaseDados: TDataModule},
-  uLogin in 'forms\uLogin.pas' {Form4},
-  uModeloRodape in 'forms\uModeloRodape.pas' {fraModeloRodape: TFrame};
+  uLogin in 'forms\uLogin.pas' {frmLogin},
+  uModeloRodape in 'forms\uModeloRodape.pas' {fraModeloRodape: TFrame},
+  uFundoBranco in 'forms\uFundoBranco.pas' {FundoBranco},
+  uConfiguracoes in 'forms\uConfiguracoes.pas' {frmConfiguracoes};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmPainelPrincipal, frmPainelPrincipal);
   Application.CreateForm(TdmBaseDados, dmBaseDados);
-  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.CreateForm(TfrmConfiguracoes, frmConfiguracoes);
+  Application.CreateForm(TFundoBranco, FundoBranco);
   Application.Run;
 end.
