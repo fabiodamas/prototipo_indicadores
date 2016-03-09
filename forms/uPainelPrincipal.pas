@@ -18,7 +18,8 @@ uses
   cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar, DateUtils,
   jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cefvcl, uModeloRodape,
   AdvMenus, cxCustomData, cxStyles, cxTL, cxTLdxBarBuiltInMenu,
-  cxInplaceContainer, cxTLData, cxDBTL, DB;
+  cxInplaceContainer, cxTLData, cxDBTL, DB, ImgList, cxButtonEdit,
+  cxGridLevel, cxGridChartView, cxClasses, cxGridCustomView, cxGrid;
 
 // ceflib, cefvcl, Buttons, ActnList, Menus, ComCtrls;
 
@@ -30,39 +31,14 @@ type
     tabInternacao: TcxTabSheet;
     tabAmbulatorio: TcxTabSheet;
     tabPacientes: TcxTabSheet;
-    advpnl1: TAdvPanel;
     dxDockPanel1: TdxDockPanel;
-    dxdckst1: TdxDockSite;
-    dxLayoutDockSite1: TdxLayoutDockSite;
-    dxDockSite2: TdxDockSite;
     dxDockPanel2: TdxDockPanel;
-    dxLayoutDockSite3: TdxLayoutDockSite;
     cxImage1: TcxImage;
     cxlbl2: TcxLabel;
     cxImage2: TcxImage;
     cxImage3: TcxImage;
     cxLabel3: TcxLabel;
     cxImage4: TcxImage;
-    dxDockSite3: TdxDockSite;
-    dxLayoutDockSite2: TdxLayoutDockSite;
-    dxDockPanel4: TdxDockPanel;
-    cxImage5: TcxImage;
-    cxLabel4: TcxLabel;
-    cxImage6: TcxImage;
-    dxDockSite4: TdxDockSite;
-    dxLayoutDockSite5: TdxLayoutDockSite;
-    dxDockPanel5: TdxDockPanel;
-    cxImage7: TcxImage;
-    cxLabel5: TcxLabel;
-    cxImage8: TcxImage;
-    dxDockSite1: TdxDockSite;
-    dxLayoutDockSite4: TdxLayoutDockSite;
-    dxDockPanel3: TdxDockPanel;
-    cxImage9: TcxImage;
-    cxLabel6: TcxLabel;
-    cxImage10: TcxImage;
-    dxDockSite5: TdxDockSite;
-    dxLayoutDockSite6: TdxLayoutDockSite;
     dxDockPanel6: TdxDockPanel;
     cxImage11: TcxImage;
     cxLabel7: TcxLabel;
@@ -86,10 +62,43 @@ type
     clmDescricao: TcxDBTreeListColumn;
     cxdbtrlstclmnValor: TcxDBTreeListColumn;
     pnlTituloIndicador: TPanel;
+    scoRolagem: TAdvScrollBox;
+    dxdckst1: TdxDockSite;
+    dxDockSite1: TdxDockSite;
+    dxDockPanel7: TdxDockPanel;
+    cxPageControl1: TcxPageControl;
+    cxTabSheet1: TcxTabSheet;
+    cxTabSheet2: TcxTabSheet;
+    cxGrid2: TcxGrid;
+    cxGridChartView1: TcxGridChartView;
+    cxGridChartSeries1: TcxGridChartSeries;
+    gcvVisualizacao: TcxGridChartView;
+    gcsPacienteInternado: TcxGridChartSeries;
+    grdNivel: TcxGridLevel;
+    dxlytdckst1: TdxLayoutDockSite;
+    cxGrid1: TcxGrid;
+    cxGridChartView2: TcxGridChartView;
+    cxGridChartSeries2: TcxGridChartSeries;
+    cxGridChartView3: TcxGridChartView;
+    cxGridChartSeries3: TcxGridChartSeries;
+    cxGridLevel1: TcxGridLevel;
+    dxlytdckst2: TdxLayoutDockSite;
+    dxdckst2: TdxDockSite;
+    dxdckst3: TdxDockSite;
+    dxdckst4: TdxDockSite;
+    dxlytdckst3: TdxLayoutDockSite;
+    dxlytdckst4: TdxLayoutDockSite;
+    dxdckst5: TdxDockSite;
+    dxdckst6: TdxDockSite;
+    dxlytdckst5: TdxLayoutDockSite;
+    dxlytdckst6: TdxLayoutDockSite;
+    dxlytdckst7: TdxLayoutDockSite;
     procedure FormShow(Sender: TObject);
     procedure fraCabecalhocxImage6Click(Sender: TObject);
     procedure imgFerramentasClick(Sender: TObject);
     procedure cxlbl2Click(Sender: TObject);
+    procedure cxdbtrlstclmnGraficoGetDisplayText(Sender: TcxTreeListColumn;
+      ANode: TcxTreeListNode; var Value: String);
   private
     { Private declarations }
   public
@@ -181,7 +190,7 @@ begin
 
      pnlTituloIndicador.Caption := 'Entradas efetuadas';
      pnlTituloIndicador.Visible := True;
-     
+
      lstListaValores.Align := alClient;
      lstListaValores.Visible := True;
 
@@ -192,6 +201,14 @@ begin
 
 
 
+end;
+
+procedure TfrmPainelPrincipal.cxdbtrlstclmnGraficoGetDisplayText(
+  Sender: TcxTreeListColumn; ANode: TcxTreeListNode; var Value: String);
+begin
+    value := 'teste';
+//    ANode.ImageIndex := 2;
+//    ANode.SelectedIndex := 2;
 end;
 
 end.
