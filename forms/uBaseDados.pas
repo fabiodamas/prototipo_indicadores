@@ -62,6 +62,12 @@ type
     strAbadescricao: TStringField;
     floAbaordem: TFloatField;
     booAbaativo: TBooleanField;
+    qryValores: TZQuery;
+    intValoresid: TIntegerField;
+    floValoresfk_indicador: TFloatField;
+    floValoresparent_id: TFloatField;
+    strValoresdescricao: TStringField;
+    floValorestotal: TFloatField;
     procedure qryPerfilDetalheAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }

@@ -1,7 +1,7 @@
 object dmBaseDados: TdmBaseDados
   OldCreateOrder = False
-  Left = 328
-  Top = 129
+  Left = 264
+  Top = 98
   Height = 662
   Width = 941
   object conConexao: TZConnection
@@ -302,6 +302,34 @@ object dmBaseDados: TdmBaseDados
     object booAbaativo: TBooleanField
       FieldName = 'ativo'
       ReadOnly = True
+    end
+  end
+  object qryValores: TZQuery
+    Connection = conConexao
+    Active = True
+    SQL.Strings = (
+      'select * from indicador_valores')
+    Params = <>
+    Left = 216
+    Top = 464
+    object intValoresid: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'id'
+      Required = True
+    end
+    object floValoresfk_indicador: TFloatField
+      FieldName = 'fk_indicador'
+    end
+    object floValoresparent_id: TFloatField
+      FieldName = 'parent_id'
+    end
+    object strValoresdescricao: TStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      FieldName = 'descricao'
+      Size = 50
+    end
+    object floValorestotal: TFloatField
+      FieldName = 'total'
     end
   end
 end

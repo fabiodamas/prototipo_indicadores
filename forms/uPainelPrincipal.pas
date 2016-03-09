@@ -17,7 +17,8 @@ uses
   cxSplitter, AdvPanel, StdCtrls, dxDockControl, dxDockPanel, cxContainer,
   cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxCalendar, DateUtils,
   jpeg, cxImage, ComCtrls, OleCtrls, SHDocVw, cefvcl, uModeloRodape,
-  AdvMenus;
+  AdvMenus, cxCustomData, cxStyles, cxTL, cxTLdxBarBuiltInMenu,
+  cxInplaceContainer, cxTLData, cxDBTL, DB;
 
 // ceflib, cefvcl, Buttons, ActnList, Menus, ComCtrls;
 
@@ -73,16 +74,22 @@ type
     cdtDataInicial: TcxDateEdit;
     cxLabel2: TcxLabel;
     cdtDataFinal: TcxDateEdit;
-    advpnl2: TAdvPanel;
-    Chromium1: TChromium;
-    cxspltr1: TcxSplitter;
+    adpPainel: TAdvPanel;
     popConfiguracoes: TAdvPopupMenu;
     mslEstilo: TAdvMenuStyler;
     Configuraes1: TMenuItem;
     fraModeloRodape1: TfraModeloRodape;
+    dsListaValores: TDataSource;
+    chmNavegador: TChromium;
+    cxspltr1: TcxSplitter;
+    lstListaValores: TcxDBTreeList;
+    clmDescricao: TcxDBTreeListColumn;
+    cxdbtrlstclmnValor: TcxDBTreeListColumn;
+    pnlTituloIndicador: TPanel;
     procedure FormShow(Sender: TObject);
     procedure fraCabecalhocxImage6Click(Sender: TObject);
     procedure imgFerramentasClick(Sender: TObject);
+    procedure cxlbl2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -105,6 +112,8 @@ begin
   fraModeloRodape1.lblDesenvolvimento.Left :=  fraModeloRodape1.imgProdam.Left - fraModeloRodape1.lblDesenvolvimento.Width - 2;
   fraCabecalho.imgFerramentas.Left := Self.Width - fraCabecalho.imgFerramentas.Width - 5;
 
+ chmNavegador.Top := ((adpPainel.ClientHeight+100) div 2 - (chmNavegador.Height div 2)) - 10;
+ chmNavegador.Left := adpPainel.ClientWidth div 2 - (chmNavegador.Width div 2);
 
   dmBaseDados.conConexao.Connect;
 
@@ -141,6 +150,7 @@ begin
 
 end;
 
+
 procedure TfrmPainelPrincipal.fraCabecalhocxImage6Click(Sender: TObject);
 begin
      Application.Terminate;
@@ -149,6 +159,39 @@ end;
 procedure TfrmPainelPrincipal.imgFerramentasClick(Sender: TObject);
 begin
      frmConfiguracoes.showmodal;
+end;
+
+{
+object Chromium1: TChromium
+  Left = 58
+  Top = 18
+  Width = 719
+  Height = 247
+  DefaultUrl =
+    'C:\Users\p017414\Documents\Indicadores\prototipo_delphi_4\hospit' +
+    'ais.html'
+  TabOrder = 0
+end
+
+}
+
+procedure TfrmPainelPrincipal.cxlbl2Click(Sender: TObject);
+begin
+     chmNavegador.Visible := False;
+
+     pnlTituloIndicador.Caption := 'Entradas efetuadas';
+     pnlTituloIndicador.Visible := True;
+     
+     lstListaValores.Align := alClient;
+     lstListaValores.Visible := True;
+
+
+     dmBaseDados.qryValores.Open;
+
+
+
+
+
 end;
 
 end.

@@ -1,10 +1,10 @@
 object frmLogin: TfrmLogin
-  Left = -8
-  Top = -8
+  Left = 1
+  Top = 0
   BorderStyle = bsNone
   Caption = 'frmLogin'
-  ClientHeight = 838
-  ClientWidth = 1600
+  ClientHeight = 722
+  ClientWidth = 1262
   Color = clWhite
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -19,31 +19,31 @@ object frmLogin: TfrmLogin
   TextHeight = 13
   inline fraModeloRodape1: TfraModeloRodape
     Left = 0
-    Top = 808
-    Width = 1600
+    Top = 692
+    Width = 1262
     Height = 30
     Align = alBottom
     Color = clWhite
     ParentColor = False
     TabOrder = 0
     inherited pnlAHMDashboardRodape: TPanel
-      Width = 1600
+      Width = 1262
       Align = alBottom
       DesignSize = (
-        1600
+        1262
         30)
       inherited Image2: TImage
-        Width = 1511
+        Width = 1173
       end
       inherited imgProdam: TImage
-        Left = 1511
+        Left = 1173
       end
       inherited lblHospedagem: TcxLabel
-        Left = 1421
+        Left = 1083
         Style.IsFontAssigned = True
       end
       inherited lblDesenvolvimento: TcxLabel
-        Left = 1420
+        Left = 1082
         Style.IsFontAssigned = True
       end
       inherited cxlblUsuario: TcxLabel
@@ -231,6 +231,7 @@ object frmLogin: TfrmLogin
       Height = 21
       PasswordChar = '*'
       TabOrder = 1
+      Text = 'asdasdfasdf'
     end
     object chkLembreDeMim: TCheckBox
       Left = 21
@@ -274,29 +275,48 @@ object frmLogin: TfrmLogin
       Width = 325
       Height = 21
       TabOrder = 0
+      Text = 'p017414'
     end
   end
   inline fraCabecalho: TfraModeloCabecalho
     Left = 0
     Top = 0
-    Width = 1600
+    Width = 1262
     Height = 247
     Align = alTop
     TabOrder = 2
     inherited pnlAHMIndicador: TPanel
+      Width = 1262
       Height = 120
+      inherited imgLayoutDireito: TcxImage
+        Left = 941
+      end
       inherited imgAHM: TcxImage
         Cursor = crHandPoint
         Height = 120
       end
+      inherited imgLogoSaoPaulo: TcxImage
+        Left = 710
+      end
     end
     inherited pnlBarraMenu: TPanel
+      Width = 1262
       inherited lblMenu: TLabel
         Width = 402
+      end
+      inherited imgMinimizar: TcxImage
+        Left = 1157
+      end
+      inherited imgRestaurar: TcxImage
+        Left = 1192
+      end
+      inherited imgFechar: TcxImage
+        Left = 1227
       end
     end
     inherited pnlModeloCabecalho: TPanel
       Top = 220
+      Width = 1262
     end
   end
 end

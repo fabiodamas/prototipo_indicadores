@@ -1,7 +1,7 @@
 object fraModeloRodape: TfraModeloRodape
   Left = 0
   Top = 0
-  Width = 1474
+  Width = 1264
   Height = 30
   Color = clWhite
   ParentColor = False
@@ -9,19 +9,19 @@ object fraModeloRodape: TfraModeloRodape
   object pnlAHMDashboardRodape: TPanel
     Left = 0
     Top = 0
-    Width = 1474
+    Width = 1264
     Height = 30
     Align = alTop
     BevelOuter = bvNone
     Color = clWhite
     TabOrder = 0
     DesignSize = (
-      1474
+      1264
       30)
     object Image2: TImage
       Left = 0
       Top = 0
-      Width = 1385
+      Width = 1175
       Height = 30
       Align = alClient
       Picture.Data = {
@@ -83,7 +83,7 @@ object fraModeloRodape: TfraModeloRodape
       Stretch = True
     end
     object imgProdam: TImage
-      Left = 1385
+      Left = 1175
       Top = 0
       Width = 89
       Height = 30
@@ -130,7 +130,7 @@ object fraModeloRodape: TfraModeloRodape
         057E83FFD9}
     end
     object lblHospedagem: TcxLabel
-      Left = 1277
+      Left = 1067
       Top = -2
       Anchors = [akRight]
       Caption = 'Hospedagem e'
@@ -144,7 +144,7 @@ object fraModeloRodape: TfraModeloRodape
       Transparent = True
     end
     object lblDesenvolvimento: TcxLabel
-      Left = 1276
+      Left = 1066
       Top = 12
       Anchors = [akRight]
       Caption = 'desenvolvimento'

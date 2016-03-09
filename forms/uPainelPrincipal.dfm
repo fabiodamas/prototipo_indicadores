@@ -1,10 +1,10 @@
 object frmPainelPrincipal: TfrmPainelPrincipal
-  Left = -8
-  Top = -8
+  Left = 16
+  Top = 137
   BorderStyle = bsNone
   Caption = 'Prot'#243'tipo Indicadores'
-  ClientHeight = 838
-  ClientWidth = 1600
+  ClientHeight = 722
+  ClientWidth = 1262
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,22 +19,22 @@ object frmPainelPrincipal: TfrmPainelPrincipal
   inline fraCabecalho: TfraModeloCabecalho
     Left = 0
     Top = 0
-    Width = 1600
+    Width = 1262
     Height = 247
     Align = alTop
     TabOrder = 0
     inherited pnlAHMIndicador: TPanel
-      Width = 1600
+      Width = 1262
       Height = 120
       inherited imgLayoutDireito: TcxImage
-        Left = 1279
+        Left = 941
       end
       inherited imgAHM: TcxImage
         Cursor = crHandPoint
         Height = 120
       end
       inherited imgLogoSaoPaulo: TcxImage
-        Left = 1048
+        Left = 710
       end
       inherited imgFerramentas: TcxImage
         Visible = True
@@ -42,27 +42,27 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       end
     end
     inherited pnlBarraMenu: TPanel
-      Width = 1600
+      Width = 1262
       inherited imgMinimizar: TcxImage
-        Left = 1495
+        Left = 1157
       end
       inherited imgRestaurar: TcxImage
-        Left = 1530
+        Left = 1192
       end
       inherited imgFechar: TcxImage
-        Left = 1565
+        Left = 1227
       end
     end
     inherited pnlModeloCabecalho: TPanel
       Top = 220
-      Width = 1600
+      Width = 1262
     end
   end
   object scoFundo: TAdvScrollBox
     Left = 0
     Top = 295
-    Width = 705
-    Height = 500
+    Width = 593
+    Height = 384
     HorzScrollBar.Visible = False
     Align = alLeft
     BevelEdges = []
@@ -75,8 +75,8 @@ object frmPainelPrincipal: TfrmPainelPrincipal
     object pco1: TcxPageControl
       Left = 0
       Top = 0
-      Width = 705
-      Height = 500
+      Width = 593
+      Height = 384
       ActivePage = tabInternacao
       Align = alClient
       Font.Charset = ANSI_CHARSET
@@ -86,9 +86,9 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ClientRectBottom = 496
+      ClientRectBottom = 380
       ClientRectLeft = 4
-      ClientRectRight = 701
+      ClientRectRight = 589
       ClientRectTop = 30
       object tabInternacao: TcxTabSheet
         Caption = 'Interna'#231#227'o'
@@ -97,7 +97,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
           Left = 0
           Top = 0
           Width = 577
-          Height = 466
+          Height = 350
           Align = alLeft
           BevelOuter = bvNone
           Color = clWhite
@@ -155,6 +155,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
               object cxImage1: TcxImage
                 Left = 0
                 Top = 0
+                Cursor = crHandPoint
                 Picture.Data = {
                   0A544A504547496D616765D9060000FFD8FFE000104A46494600010101004800
                   480000FFDB004300010101010101010101010101010101010101010101010101
@@ -221,6 +222,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
               object cxlbl2: TcxLabel
                 Left = 88
                 Top = 8
+                Cursor = crHandPoint
                 AutoSize = False
                 Caption = '1.343'
                 ParentFont = False
@@ -232,6 +234,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
                 Style.IsFontAssigned = True
                 Properties.Alignment.Horz = taCenter
                 Transparent = True
+                OnClick = cxlbl2Click
                 Height = 33
                 Width = 185
                 AnchorX = 181
@@ -1117,7 +1120,7 @@ object frmPainelPrincipal: TfrmPainelPrincipal
   object Panel1: TPanel
     Left = 0
     Top = 247
-    Width = 1600
+    Width = 1262
     Height = 48
     Align = alTop
     BevelOuter = bvNone
@@ -1187,11 +1190,11 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       Width = 121
     end
   end
-  object advpnl2: TAdvPanel
-    Left = 713
+  object adpPainel: TAdvPanel
+    Left = 601
     Top = 295
-    Width = 887
-    Height = 500
+    Width = 661
+    Height = 384
     Align = alClient
     BevelInner = bvLowered
     Color = clWhite
@@ -1200,10 +1203,10 @@ object frmPainelPrincipal: TfrmPainelPrincipal
     Version = '1.9.0.3'
     Caption.Color = clHighlight
     Caption.ColorTo = clNone
-    Caption.Font.Charset = DEFAULT_CHARSET
+    Caption.Font.Charset = ANSI_CHARSET
     Caption.Font.Color = clHighlightText
-    Caption.Font.Height = -11
-    Caption.Font.Name = 'MS Sans Serif'
+    Caption.Font.Height = -19
+    Caption.Font.Name = 'Tahoma'
     Caption.Font.Style = []
     StatusBar.Font.Charset = DEFAULT_CHARSET
     StatusBar.Font.Color = clWindowText
@@ -1211,49 +1214,102 @@ object frmPainelPrincipal: TfrmPainelPrincipal
     StatusBar.Font.Name = 'Tahoma'
     StatusBar.Font.Style = []
     FullHeight = 0
-    object Chromium1: TChromium
-      Left = 58
-      Top = 18
-      Width = 719
-      Height = 247
+    object chmNavegador: TChromium
+      Left = 108
+      Top = 68
+      Width = 500
+      Height = 500
       DefaultUrl = 
         'C:\Users\p017414\Documents\Indicadores\prototipo_delphi_4\hospit' +
         'ais.html'
       TabOrder = 0
     end
-  end
-  object cxspltr1: TcxSplitter
-    Left = 705
-    Top = 295
-    Width = 8
-    Height = 500
-    Control = scoFundo
+    object lstListaValores: TcxDBTreeList
+      Left = 42
+      Top = 138
+      Width = 455
+      Height = 216
+      Bands = <
+        item
+        end>
+      DataController.DataSource = dsListaValores
+      DataController.ParentField = 'parent_id'
+      DataController.KeyField = 'id'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      RootValue = -1
+      TabOrder = 1
+      Visible = False
+      object clmDescricao: TcxDBTreeListColumn
+        Caption.Text = 'Hospital/Unidade'
+        DataBinding.FieldName = 'descricao'
+        Width = 308
+        Position.ColIndex = 0
+        Position.RowIndex = 0
+        Position.BandIndex = 0
+        Summary.FooterSummaryItems = <>
+        Summary.GroupFooterSummaryItems = <>
+      end
+      object cxdbtrlstclmnValor: TcxDBTreeListColumn
+        Caption.Text = 'Quantidade'
+        DataBinding.FieldName = 'total'
+        Width = 132
+        Position.ColIndex = 1
+        Position.RowIndex = 0
+        Position.BandIndex = 0
+        Summary.FooterSummaryItems = <>
+        Summary.GroupFooterSummaryItems = <>
+      end
+    end
+    object pnlTituloIndicador: TPanel
+      Left = 2
+      Top = 2
+      Width = 657
+      Height = 41
+      Align = alTop
+      Color = 15461355
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+    end
   end
   inline fraModeloRodape1: TfraModeloRodape
     Left = 0
-    Top = 795
-    Width = 1600
+    Top = 679
+    Width = 1262
     Height = 43
     Align = alBottom
     Color = clWhite
     ParentColor = False
-    TabOrder = 5
+    TabOrder = 4
     inherited pnlAHMDashboardRodape: TPanel
       Top = 13
-      Width = 1600
+      Width = 1262
       Align = alBottom
+      DesignSize = (
+        1262
+        30)
       inherited Image2: TImage
-        Width = 1511
+        Width = 1173
       end
       inherited imgProdam: TImage
-        Left = 1511
+        Left = 1173
       end
       inherited lblHospedagem: TcxLabel
-        Left = 1403
+        Left = 1065
         Style.IsFontAssigned = True
       end
       inherited lblDesenvolvimento: TcxLabel
-        Left = 1402
+        Left = 1064
         Style.IsFontAssigned = True
       end
       inherited cxlblUsuario: TcxLabel
@@ -1262,10 +1318,18 @@ object frmPainelPrincipal: TfrmPainelPrincipal
       end
     end
   end
+  object cxspltr1: TcxSplitter
+    Left = 593
+    Top = 295
+    Width = 8
+    Height = 384
+    HotZoneClassName = 'TcxSimpleStyle'
+    Control = scoFundo
+  end
   object popConfiguracoes: TAdvPopupMenu
     Version = '2.5.3.0'
-    Left = 1137
-    Top = 330
+    Left = 1225
+    Top = 186
     object Configuraes1: TMenuItem
       Caption = 'Configura'#231#245'es'
     end
@@ -1330,7 +1394,12 @@ object frmPainelPrincipal: TfrmPainelPrincipal
     ButtonAppearance.CaptionFont.Height = -11
     ButtonAppearance.CaptionFont.Name = 'Segoe UI'
     ButtonAppearance.CaptionFont.Style = []
-    Left = 1033
-    Top = 306
+    Left = 1081
+    Top = 186
+  end
+  object dsListaValores: TDataSource
+    DataSet = dmBaseDados.qryValores
+    Left = 1209
+    Top = 415
   end
 end
