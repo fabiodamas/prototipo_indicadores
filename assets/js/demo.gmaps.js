@@ -100,6 +100,23 @@ var DemoGMaps = function () {
             }
         });        
         
+
+       // Hospital Municipal Doutor Arthur Ribeiro de Saboya
+       conteudo = '<span style="color:#000">' ;
+       conteudo = conteudo + '<h5 style="color:blue">Hospital Municipal Doutor Arthur Ribeiro de Saboya </h5>';
+       conteudo = conteudo + 'São Paulo - SP, CEP: 04330-020 <br>';       
+       conteudo = conteudo + 'Avenida Francisco de Paula Quintanilha Ribeiro, 860 - Jabaquara <br>';
+       conteudo = conteudo + '<img src="http://cbk0.googleapis.com/cbk?output=thumbnail&cb_client=apiv3&v=4&gl=US&panoid=LsZTkoTdNvtsbzGxUMAPMw&yaw=9.708145566223038&w=204&h=50&thumb=2">' ;
+       conteudo = conteudo + '</span>';
+       map.addMarker({
+            lat: -23.64976690832355,
+            lng: -46.636052756561284,
+            title: 'Marker with InfoWindow',
+            infoWindow: {
+                content: conteudo
+            }
+        });        
+                
         
         
     }

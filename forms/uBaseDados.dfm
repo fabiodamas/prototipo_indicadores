@@ -11,14 +11,15 @@ object dmBaseDados: TdmBaseDados
     Catalog = 'agh'
     Properties.Strings = (
       'codepage=LATIN1')
-    Connected = True
     HostName = '10.10.73.14'
     Port = 5433
     Database = 'aghu_50'
     User = 'am0106'
     Password = 'pwdam0106'
     Protocol = 'postgresql-9'
-    LibraryLocation = 'c:\lib\libpq.dll'
+    LibraryLocation = 
+      'C:\Users\p017414\Documents\Indicadores\prototipo_delphi_4\libpq.' +
+      'dll'
     Left = 40
     Top = 72
   end
@@ -89,6 +90,9 @@ object dmBaseDados: TdmBaseDados
     object floIndicadormeta: TFloatField
       DisplayLabel = 'Meta'
       FieldName = 'meta'
+    end
+    object floIndicadorvalor_maximo: TFloatField
+      FieldName = 'valor_maximo'
     end
   end
   object qryUnidade: TZQuery
@@ -268,8 +272,8 @@ object dmBaseDados: TdmBaseDados
       'select * from  indicador_permissao'
       'order by id')
     Params = <>
-    Left = 568
-    Top = 336
+    Left = 560
+    Top = 384
     object IntegerField2: TIntegerField
       DisplayLabel = 'C'#243'digo'
       FieldName = 'id'
@@ -306,12 +310,11 @@ object dmBaseDados: TdmBaseDados
   end
   object qryValores: TZQuery
     Connection = conConexao
-    Active = True
     SQL.Strings = (
       'select * from indicador_valores')
     Params = <>
     Left = 216
-    Top = 464
+    Top = 456
     object intValoresid: TIntegerField
       DisplayLabel = 'C'#243'digo'
       FieldName = 'id'
@@ -330,6 +333,26 @@ object dmBaseDados: TdmBaseDados
     end
     object floValorestotal: TFloatField
       FieldName = 'total'
+    end
+  end
+  object qryPerfilFK: TZQuery
+    Connection = conConexao
+    SQL.Strings = (
+      'select *'
+      'from indicador_perfil'
+      'order by id')
+    Params = <>
+    Left = 616
+    Top = 472
+    object int1: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'id'
+      Required = True
+    end
+    object str1: TStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      FieldName = 'descricao'
+      Size = 50
     end
   end
 end

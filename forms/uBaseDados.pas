@@ -68,6 +68,10 @@ type
     floValoresparent_id: TFloatField;
     strValoresdescricao: TStringField;
     floValorestotal: TFloatField;
+    floIndicadorvalor_maximo: TFloatField;
+    qryPerfilFK: TZQuery;
+    int1: TIntegerField;
+    str1: TStringField;
     procedure qryPerfilDetalheAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }

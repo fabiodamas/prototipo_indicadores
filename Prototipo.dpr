@@ -2,6 +2,7 @@ program Prototipo;
 
 uses
   Forms,
+  SysUtils ,
   uModeloCabecalho in 'forms\uModeloCabecalho.pas' {fraModeloCabecalho: TFrame},
   uPainelPrincipal in 'forms\uPainelPrincipal.pas' {frmPainelPrincipal},
   uBaseDados in 'forms\uBaseDados.pas' {dmBaseDados: TDataModule},
@@ -11,12 +12,12 @@ uses
   uConfiguracoes in 'forms\uConfiguracoes.pas' {frmConfiguracoes};
 
 {$R *.res}
-
 begin
   Application.Initialize;
   Application.CreateForm(TdmBaseDados, dmBaseDados);
   Application.CreateForm(TfrmLogin, frmLogin);
   Application.CreateForm(TfrmConfiguracoes, frmConfiguracoes);
+  Application.CreateForm(TfrmPainelPrincipal, frmPainelPrincipal);
   Application.CreateForm(TFundoBranco, FundoBranco);
   Application.Run;
 end.

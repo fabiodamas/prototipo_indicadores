@@ -1,10 +1,10 @@
 object frmConfiguracoes: TfrmConfiguracoes
-  Left = 92
-  Top = 134
+  Left = 1
+  Top = 1
   BorderStyle = bsNone
   Caption = 'Configura'#231#245'es'
-  ClientHeight = 734
-  ClientWidth = 1280
+  ClientHeight = 778
+  ClientWidth = 1582
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,43 +19,59 @@ object frmConfiguracoes: TfrmConfiguracoes
   inline fraCabecalho: TfraModeloCabecalho
     Left = 0
     Top = 0
-    Width = 1280
-    Height = 250
+    Width = 1582
+    Height = 249
     Align = alTop
     TabOrder = 0
     inherited pnlAHMIndicador: TPanel
-      Width = 1280
+      Width = 1582
       inherited imgLayoutDireito: TcxImage
-        Left = 959
+        Left = 1261
       end
       inherited imgAHM: TcxImage
         Cursor = crHandPoint
+        OnClick = fraCabecalhoStaticText1Click
+      end
+      inherited imgLayoutCentro: TcxImage
+        Cursor = crHandPoint
+        OnClick = fraCabecalhoStaticText1Click
       end
       inherited imgLogoSaoPaulo: TcxImage
-        Left = 728
+        Left = 1030
+      end
+      inherited imgFerramentas: TcxImage
+        Left = 1557
       end
     end
     inherited pnlBarraMenu: TPanel
-      Width = 1280
+      Width = 1582
       inherited imgMinimizar: TcxImage
-        Left = 1175
+        Left = 1477
       end
       inherited imgRestaurar: TcxImage
-        Left = 1210
+        Left = 1512
       end
       inherited imgFechar: TcxImage
-        Left = 1245
+        Left = 1547
       end
     end
     inherited pnlModeloCabecalho: TPanel
-      Width = 1280
+      Width = 1582
+      inherited StaticText1: TStaticText
+        Cursor = crHandPoint
+        OnClick = fraCabecalhoStaticText1Click
+      end
+      inherited cxImage1: TcxImage
+        Cursor = crHandPoint
+        OnClick = fraCabecalhoStaticText1Click
+      end
     end
   end
   object scoFundo: TAdvScrollBox
     Left = 8
-    Top = 250
-    Width = 1272
-    Height = 441
+    Top = 249
+    Width = 1574
+    Height = 486
     HorzScrollBar.Visible = False
     Align = alClient
     BevelEdges = []
@@ -68,8 +84,8 @@ object frmConfiguracoes: TfrmConfiguracoes
     object pcoConfiguracoes: TcxPageControl
       Left = 0
       Top = 0
-      Width = 1272
-      Height = 441
+      Width = 1574
+      Height = 486
       ActivePage = tabIndicador
       Align = alClient
       Font.Charset = ANSI_CHARSET
@@ -79,9 +95,9 @@ object frmConfiguracoes: TfrmConfiguracoes
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ClientRectBottom = 437
+      ClientRectBottom = 482
       ClientRectLeft = 4
-      ClientRectRight = 1268
+      ClientRectRight = 1570
       ClientRectTop = 30
       object tabIndicador: TcxTabSheet
         Caption = 'Indicador'
@@ -105,7 +121,7 @@ object frmConfiguracoes: TfrmConfiguracoes
           StyleHot.LookAndFeel.SkinName = 'Silver'
           TabOrder = 0
           Height = 111
-          Width = 1264
+          Width = 1566
           object cxLabel11: TcxLabel
             Left = 6
             Top = 17
@@ -159,14 +175,14 @@ object frmConfiguracoes: TfrmConfiguracoes
         object pcoListagemFormulario: TcxPageControl
           Left = 0
           Top = 111
-          Width = 1264
-          Height = 296
-          ActivePage = tabListagemIndicador
+          Width = 1566
+          Height = 341
+          ActivePage = tabFormulario
           Align = alClient
           TabOrder = 2
-          ClientRectBottom = 292
+          ClientRectBottom = 337
           ClientRectLeft = 4
-          ClientRectRight = 1260
+          ClientRectRight = 1562
           ClientRectTop = 30
           object tabListagemIndicador: TcxTabSheet
             Caption = '&Listagem'
@@ -181,8 +197,8 @@ object frmConfiguracoes: TfrmConfiguracoes
             object griIndicador: TcxGrid
               Left = 0
               Top = 0
-              Width = 1256
-              Height = 262
+              Width = 982
+              Height = 215
               Align = alClient
               TabOrder = 0
               object tblIndicador: TcxGridDBTableView
@@ -233,6 +249,8 @@ object frmConfiguracoes: TfrmConfiguracoes
                 object tblIndicadorsql: TcxGridDBColumn
                   Caption = 'SQL'
                   DataBinding.FieldName = 'sql'
+                  PropertiesClassName = 'TcxMemoProperties'
+                  Properties.ScrollBars = ssBoth
                   Width = 73
                 end
                 object tblIndicadorexibir_grafico: TcxGridDBColumn
@@ -241,7 +259,14 @@ object frmConfiguracoes: TfrmConfiguracoes
                   Width = 112
                 end
                 object tblIndicadorvalor_medio: TcxGridDBColumn
+                  Caption = 'Valor m'#237'nimo'
                   DataBinding.FieldName = 'valor_medio'
+                  Width = 102
+                end
+                object cxgrdbclmnIndicadorvalor_maximo: TcxGridDBColumn
+                  Caption = 'Valor m'#225'ximo'
+                  DataBinding.FieldName = 'valor_maximo'
+                  Width = 113
                 end
                 object tblIndicadororderm_exibicao: TcxGridDBColumn
                   DataBinding.FieldName = 'orderm_exibicao'
@@ -270,13 +295,13 @@ object frmConfiguracoes: TfrmConfiguracoes
               Caption = '&Indicador'
             end
             object cxLabel3: TcxLabel
-              Left = 208
+              Left = 8
               Top = 128
               Caption = '&Dica de Tela'
             end
             object cxdbrdgrp1: TcxDBRadioGroup
-              Left = 544
-              Top = 88
+              Left = 538
+              Top = 134
               Caption = '&Exibi'#231#227'o padr'#227'o'
               DataBinding.DataField = 'exibicao_padrao'
               DataBinding.DataSource = dsIndicador
@@ -298,7 +323,7 @@ object frmConfiguracoes: TfrmConfiguracoes
                   Value = 'Painel'
                 end>
               TabOrder = 3
-              Height = 153
+              Height = 134
               Width = 177
             end
             object dteCodigo: TcxDBTextEdit
@@ -312,12 +337,12 @@ object frmConfiguracoes: TfrmConfiguracoes
             end
             object cxLabel5: TcxLabel
               Left = 6
-              Top = 130
+              Top = 266
               Caption = '&SQL'
             end
             object dchVisivel: TcxDBCheckBox
-              Left = 736
-              Top = 109
+              Left = 728
+              Top = 165
               Caption = 'Vis'#237'vel'
               DataBinding.DataField = 'ativado'
               DataBinding.DataSource = dsIndicador
@@ -325,8 +350,8 @@ object frmConfiguracoes: TfrmConfiguracoes
               Width = 73
             end
             object cxDBCheckBox1: TcxDBCheckBox
-              Left = 736
-              Top = 85
+              Left = 728
+              Top = 141
               Caption = '&Exibir Gr'#225'fico'
               DataBinding.DataField = 'exibir_grafico'
               DataBinding.DataSource = dsIndicador
@@ -381,69 +406,71 @@ object frmConfiguracoes: TfrmConfiguracoes
             end
             object cxDBMemo1: TcxDBMemo
               Left = 6
-              Top = 154
+              Top = 296
               DataBinding.DataField = 'sql'
               DataBinding.DataSource = dsIndicador
+              Properties.CharCase = ecUpperCase
+              Properties.ScrollBars = ssBoth
               TabOrder = 10
-              Height = 89
-              Width = 185
+              Height = 209
+              Width = 1123
             end
             object cxDBMemo2: TcxDBMemo
-              Left = 208
+              Left = 8
               Top = 152
               DataBinding.DataField = 'dica_tela'
               DataBinding.DataSource = dsIndicador
               TabOrder = 11
-              Height = 89
-              Width = 321
+              Height = 113
+              Width = 521
             end
             object cxLabel30: TcxLabel
-              Left = 739
-              Top = 138
-              Caption = '&Valor M'#233'dio (%)'
+              Left = 875
+              Top = 74
+              Caption = '&Valor M'#237'nimo (%)'
             end
             object cxDBTextEdit19: TcxDBTextEdit
-              Left = 739
-              Top = 162
+              Left = 875
+              Top = 96
               DataBinding.DataField = 'valor_medio'
               DataBinding.DataSource = dsIndicador
               TabOrder = 13
               Width = 121
             end
             object cxLabel32: TcxLabel
-              Left = 912
-              Top = 136
+              Left = 1010
+              Top = 75
               Caption = '&Meta (%)'
             end
             object cxDBTextEdit21: TcxDBTextEdit
-              Left = 912
-              Top = 160
+              Left = 1010
+              Top = 96
               DataBinding.DataField = 'meta'
               DataBinding.DataSource = dsIndicador
               TabOrder = 15
               Width = 121
             end
             object cxLabel33: TcxLabel
-              Left = 736
-              Top = 192
+              Left = 540
+              Top = 72
               Caption = '&Aba do Painel Principal'
             end
             object cxDBTextEdit25: TcxDBTextEdit
-              Left = 912
-              Top = 104
+              Left = 726
+              Top = 96
               DataBinding.DataField = 'orderm_exibicao'
               DataBinding.DataSource = dsIndicador
               TabOrder = 17
               Width = 121
             end
             object cxLabel39: TcxLabel
-              Left = 912
-              Top = 80
+              Left = 726
+              Top = 74
               Caption = '&Ordem de Exibi'#231#227'o'
             end
             object cbbAba: TcxDBLookupComboBox
-              Left = 736
-              Top = 216
+              Left = 540
+              Top = 96
               DataBinding.DataField = 'fk_aba_menu_principal'
               DataBinding.DataSource = dsIndicador
               Properties.KeyFieldNames = 'id'
@@ -454,6 +481,19 @@ object frmConfiguracoes: TfrmConfiguracoes
               Properties.ListSource = dsAbaFK
               TabOrder = 19
               Width = 169
+            end
+            object lbl1: TcxLabel
+              Left = 875
+              Top = 138
+              Caption = '&Valor M'#225'ximo (%)'
+            end
+            object dteValorMaximo: TcxDBTextEdit
+              Left = 875
+              Top = 160
+              DataBinding.DataField = 'valor_maximo'
+              DataBinding.DataSource = dsIndicador
+              TabOrder = 21
+              Width = 121
             end
           end
         end
@@ -476,7 +516,7 @@ object frmConfiguracoes: TfrmConfiguracoes
           StyleHot.LookAndFeel.SkinName = 'Silver'
           TabOrder = 0
           Height = 116
-          Width = 1264
+          Width = 1566
           object cxlbl1: TcxLabel
             Left = 8
             Top = 18
@@ -529,14 +569,14 @@ object frmConfiguracoes: TfrmConfiguracoes
         object pcoUsuario: TcxPageControl
           Left = 0
           Top = 116
-          Width = 1264
-          Height = 291
-          ActivePage = tabListagemUsuario
+          Width = 1566
+          Height = 336
+          ActivePage = tabFormularioUsuario
           Align = alClient
           TabOrder = 1
-          ClientRectBottom = 287
+          ClientRectBottom = 332
           ClientRectLeft = 4
-          ClientRectRight = 1260
+          ClientRectRight = 1562
           ClientRectTop = 30
           object tabListagemUsuario: TcxTabSheet
             Caption = '&Listagem'
@@ -544,8 +584,8 @@ object frmConfiguracoes: TfrmConfiguracoes
             object griUsuario: TcxGrid
               Left = 0
               Top = 0
-              Width = 1256
-              Height = 257
+              Width = 1558
+              Height = 302
               Align = alClient
               TabOrder = 0
               object tblUsuario: TcxGridDBTableView
@@ -580,6 +620,14 @@ object frmConfiguracoes: TfrmConfiguracoes
                 end
                 object cxgrdbclmnUsuariofk_perfil: TcxGridDBColumn
                   DataBinding.FieldName = 'fk_perfil'
+                  PropertiesClassName = 'TcxLookupComboBoxProperties'
+                  Properties.KeyFieldNames = 'id'
+                  Properties.ListColumns = <
+                    item
+                      FieldName = 'descricao'
+                    end>
+                  Properties.ListSource = dsPerfilFK
+                  Width = 185
                 end
                 object cxgrdbclmnUsuariologin: TcxGridDBColumn
                   DataBinding.FieldName = 'login'
@@ -659,25 +707,12 @@ object frmConfiguracoes: TfrmConfiguracoes
               Top = 64
               Caption = '&E-mail'
             end
-            object cxLabel13: TcxLabel
-              Left = 15
-              Top = 122
-              Caption = '&Perfil'
-            end
-            object cbb1: TcxDBComboBox
-              Left = 15
-              Top = 144
-              DataBinding.DataField = 'fk_perfil'
-              DataBinding.DataSource = dsUsuario
-              TabOrder = 11
-              Width = 121
-            end
             object cxDBTextEdit26: TcxDBTextEdit
               Left = 157
               Top = 143
               DataBinding.DataField = 'login'
               DataBinding.DataSource = dsUsuario
-              TabOrder = 12
+              TabOrder = 10
               Width = 139
             end
             object cxLabel40: TcxLabel
@@ -719,7 +754,26 @@ object frmConfiguracoes: TfrmConfiguracoes
               LookAndFeel.SkinName = 'Caramel'
               ParentShowHint = False
               ShowHint = True
-              TabOrder = 14
+              TabOrder = 12
+            end
+            object cbb2: TcxDBLookupComboBox
+              Left = 15
+              Top = 143
+              DataBinding.DataField = 'fk_perfil'
+              DataBinding.DataSource = dsUsuario
+              Properties.KeyFieldNames = 'id'
+              Properties.ListColumns = <
+                item
+                  FieldName = 'descricao'
+                end>
+              Properties.ListSource = dsPerfilFK
+              TabOrder = 13
+              Width = 130
+            end
+            object lbl2: TcxLabel
+              Left = 15
+              Top = 119
+              Caption = '&Perfil'
             end
           end
         end
@@ -742,7 +796,7 @@ object frmConfiguracoes: TfrmConfiguracoes
           StyleHot.LookAndFeel.SkinName = 'Silver'
           TabOrder = 0
           Height = 137
-          Width = 1264
+          Width = 1566
           object cxLabel14: TcxLabel
             Left = 8
             Top = 26
@@ -814,23 +868,23 @@ object frmConfiguracoes: TfrmConfiguracoes
         object cxPageControl2: TcxPageControl
           Left = 0
           Top = 137
-          Width = 1264
-          Height = 270
+          Width = 1566
+          Height = 315
           ActivePage = cxTabSheet3
           Align = alClient
           TabOrder = 1
-          ClientRectBottom = 266
+          ClientRectBottom = 311
           ClientRectLeft = 4
-          ClientRectRight = 1260
+          ClientRectRight = 1562
           ClientRectTop = 30
           object cxTabSheet3: TcxTabSheet
-            Caption = 'Listagem de perfis'
+            Caption = 'Listagem de permiss'#245'es'
             ImageIndex = 0
             object cxGrid1: TcxGrid
               Left = 0
               Top = 0
-              Width = 1256
-              Height = 236
+              Width = 1558
+              Height = 281
               Align = alClient
               TabOrder = 0
               object cxGridDBTableView1: TcxGridDBTableView
@@ -932,7 +986,7 @@ object frmConfiguracoes: TfrmConfiguracoes
           Left = 0
           Top = 0
           Align = alTop
-          Caption = '&Perfil'
+          Caption = '&Permiss'#227'o'
           Style.LookAndFeel.NativeStyle = False
           Style.LookAndFeel.SkinName = 'Silver'
           StyleDisabled.LookAndFeel.NativeStyle = False
@@ -943,7 +997,7 @@ object frmConfiguracoes: TfrmConfiguracoes
           StyleHot.LookAndFeel.SkinName = 'Silver'
           TabOrder = 0
           Height = 137
-          Width = 1264
+          Width = 1566
           object cxLabel16: TcxLabel
             Left = 8
             Top = 26
@@ -1015,14 +1069,14 @@ object frmConfiguracoes: TfrmConfiguracoes
         object cxPageControl1: TcxPageControl
           Left = 0
           Top = 137
-          Width = 1264
-          Height = 270
+          Width = 1566
+          Height = 315
           ActivePage = cxTabSheet1
           Align = alClient
           TabOrder = 1
-          ClientRectBottom = 266
+          ClientRectBottom = 311
           ClientRectLeft = 4
-          ClientRectRight = 1260
+          ClientRectRight = 1562
           ClientRectTop = 30
           object cxTabSheet1: TcxTabSheet
             Caption = 'Listagem'
@@ -1030,8 +1084,8 @@ object frmConfiguracoes: TfrmConfiguracoes
             object griPermissao: TcxGrid
               Left = 0
               Top = 0
-              Width = 1256
-              Height = 236
+              Width = 1558
+              Height = 281
               Align = alClient
               TabOrder = 0
               object tblPermissao: TcxGridDBTableView
@@ -1079,7 +1133,7 @@ object frmConfiguracoes: TfrmConfiguracoes
           StyleHot.LookAndFeel.SkinName = 'Silver'
           TabOrder = 0
           Height = 137
-          Width = 1264
+          Width = 1566
           object cxLabel4: TcxLabel
             Left = 8
             Top = 26
@@ -1132,14 +1186,14 @@ object frmConfiguracoes: TfrmConfiguracoes
         object pcoUnidadesAutarquia: TcxPageControl
           Left = 0
           Top = 137
-          Width = 1264
-          Height = 270
+          Width = 1566
+          Height = 315
           ActivePage = tabListagemUnidadeAutarquia
           Align = alClient
           TabOrder = 1
-          ClientRectBottom = 266
+          ClientRectBottom = 311
           ClientRectLeft = 4
-          ClientRectRight = 1260
+          ClientRectRight = 1562
           ClientRectTop = 30
           object tabListagemUnidadeAutarquia: TcxTabSheet
             Caption = '&Listagem'
@@ -1147,8 +1201,8 @@ object frmConfiguracoes: TfrmConfiguracoes
             object cxGrid2: TcxGrid
               Left = 0
               Top = 0
-              Width = 1256
-              Height = 236
+              Width = 1558
+              Height = 281
               Align = alClient
               TabOrder = 0
               object cxGridDBTableView2: TcxGridDBTableView
@@ -1366,7 +1420,7 @@ object frmConfiguracoes: TfrmConfiguracoes
           StyleHot.LookAndFeel.SkinName = 'Silver'
           TabOrder = 0
           Height = 137
-          Width = 1264
+          Width = 1566
           object cxLabel19: TcxLabel
             Left = 8
             Top = 24
@@ -1461,14 +1515,14 @@ object frmConfiguracoes: TfrmConfiguracoes
         object cxPageControl4: TcxPageControl
           Left = 0
           Top = 137
-          Width = 1264
-          Height = 270
+          Width = 1566
+          Height = 315
           ActivePage = cxTabSheet8
           Align = alClient
           TabOrder = 1
-          ClientRectBottom = 266
+          ClientRectBottom = 311
           ClientRectLeft = 4
-          ClientRectRight = 1260
+          ClientRectRight = 1562
           ClientRectTop = 30
           object cxTabSheet8: TcxTabSheet
             Caption = '&Listagem'
@@ -1476,8 +1530,8 @@ object frmConfiguracoes: TfrmConfiguracoes
             object cxGrid3: TcxGrid
               Left = 0
               Top = 0
-              Width = 1256
-              Height = 236
+              Width = 1558
+              Height = 281
               Align = alClient
               TabOrder = 0
               object cxGridDBTableView3: TcxGridDBTableView
@@ -1514,13 +1568,94 @@ object frmConfiguracoes: TfrmConfiguracoes
           end
         end
       end
+      object tab1: TcxTabSheet
+        Caption = '&Coleta de dados'
+        ImageIndex = 6
+        object pco1: TcxPageControl
+          Left = 0
+          Top = 0
+          Width = 1566
+          Height = 452
+          ActivePage = tab2
+          Align = alClient
+          TabOrder = 0
+          ClientRectBottom = 448
+          ClientRectLeft = 4
+          ClientRectRight = 1562
+          ClientRectTop = 30
+          object tab2: TcxTabSheet
+            Caption = 'Job'
+            ImageIndex = 0
+            object lbl3: TcxLabel
+              Left = 16
+              Top = 18
+              Caption = '&C'#243'digo'
+              Transparent = True
+            end
+            object lbl4: TcxLabel
+              Left = 288
+              Top = 202
+              Caption = '&Permiss'#227'o'
+              Transparent = True
+            end
+            object dte1: TcxDBTextEdit
+              Left = 16
+              Top = 40
+              DataBinding.DataField = 'id'
+              DataBinding.DataSource = dsPermissao
+              Enabled = False
+              TabOrder = 2
+              Width = 121
+            end
+            object dte2: TcxDBTextEdit
+              Left = 288
+              Top = 221
+              DataBinding.DataField = 'descricao'
+              DataBinding.DataSource = dsPermissao
+              TabOrder = 3
+              Width = 425
+            end
+            object cxdbrdgrp2: TcxDBRadioGroup
+              Left = 154
+              Top = 30
+              Caption = '&Frequ'#234'ncia'
+              DataBinding.DataField = 'exibicao_padrao'
+              DataBinding.DataSource = dsIndicador
+              Properties.Items = <
+                item
+                  Caption = 'Uma vez'
+                  Value = 'Uma vez'
+                end
+                item
+                  Caption = 'Di'#225'rio'
+                  Value = 'Di'#225'rio'
+                end
+                item
+                  Caption = 'Semanal'
+                  Value = 'Semanal'
+                end
+                item
+                  Caption = 'Mensalmente'
+                  Value = 'Mensalmente'
+                end>
+              TabOrder = 4
+              Height = 134
+              Width = 177
+            end
+          end
+          object tab3: TcxTabSheet
+            Caption = 'Hist'#243'rico Job'
+            ImageIndex = 1
+          end
+        end
+      end
     end
   end
   object cxspltr1: TcxSplitter
     Left = 0
-    Top = 250
+    Top = 249
     Width = 8
-    Height = 441
+    Height = 486
     Control = scoFundo
   end
   object StaticText2: TStaticText
@@ -1541,8 +1676,8 @@ object frmConfiguracoes: TfrmConfiguracoes
   end
   inline fraModeloRodape1: TfraModeloRodape
     Left = 0
-    Top = 691
-    Width = 1280
+    Top = 735
+    Width = 1582
     Height = 43
     Align = alBottom
     Color = clWhite
@@ -1550,20 +1685,23 @@ object frmConfiguracoes: TfrmConfiguracoes
     TabOrder = 4
     inherited pnlAHMDashboardRodape: TPanel
       Top = 13
-      Width = 1280
+      Width = 1582
       Align = alBottom
+      DesignSize = (
+        1582
+        30)
       inherited Image2: TImage
-        Width = 1191
+        Width = 1493
       end
       inherited imgProdam: TImage
-        Left = 1191
+        Left = 1493
       end
       inherited lblHospedagem: TcxLabel
-        Left = 1083
+        Left = 1385
         Style.IsFontAssigned = True
       end
       inherited lblDesenvolvimento: TcxLabel
-        Left = 1082
+        Left = 1384
         Style.IsFontAssigned = True
       end
       inherited cxlblUsuario: TcxLabel
@@ -1650,13 +1788,13 @@ object frmConfiguracoes: TfrmConfiguracoes
   end
   object dsUnidadeAutarquia: TDataSource
     DataSet = dmBaseDados.qryUnidade
-    Left = 488
-    Top = 359
+    Left = 1480
+    Top = 655
   end
   object dsUsuario: TDataSource
     DataSet = dmBaseDados.qryUsuario
-    Left = 944
-    Top = 455
+    Left = 1048
+    Top = 415
   end
   object dsAbaFK: TDataSource
     DataSet = dmBaseDados.qryAbaFK
@@ -1666,13 +1804,13 @@ object frmConfiguracoes: TfrmConfiguracoes
   object dsPerfil: TDataSource
     DataSet = dmBaseDados.qryPerfil
     OnDataChange = dsPerfilDataChange
-    Left = 824
-    Top = 463
+    Left = 1304
+    Top = 655
   end
   object dsPerfilDetalhe: TDataSource
     DataSet = dmBaseDados.qryPerfilDetalhe
-    Left = 632
-    Top = 351
+    Left = 1432
+    Top = 663
   end
   object dsPermissaoFK: TDataSource
     DataSet = dmBaseDados.qryPermissaoFK
@@ -1683,12 +1821,18 @@ object frmConfiguracoes: TfrmConfiguracoes
   object dsPermissao: TDataSource
     DataSet = dmBaseDados.qryPermissao
     OnDataChange = dsPerfilDataChange
-    Left = 824
-    Top = 503
+    Left = 944
+    Top = 375
   end
   object dsAba: TDataSource
     DataSet = dmBaseDados.qryAba
-    Left = 808
-    Top = 311
+    Left = 1320
+    Top = 655
+  end
+  object dsPerfilFK: TDataSource
+    DataSet = dmBaseDados.qryPerfil
+    OnDataChange = dsPerfilDataChange
+    Left = 1224
+    Top = 687
   end
 end

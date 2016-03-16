@@ -30,6 +30,7 @@ type
     StaticText2: TStaticText;
     edtLogin: TEdit;
     fraCabecalho: TfraModeloCabecalho;
+    txt2: TStaticText;
     procedure btnEntrarClick(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -48,6 +49,8 @@ implementation
 uses uPainelPrincipal, uBaseDados;
 
 {$R *.dfm}
+
+
 
 procedure TfrmLogin.btnEntrarClick(Sender: TObject);
 begin
@@ -68,6 +71,11 @@ begin
 
   with dmBaseDados do
   begin
+
+    conConexao.LibraryLocation := GetCurrentDir +  '\libpq.dll';
+
+    conConexao.Connect ;
+
     qryUsuario.Close;
     qryUsuario.SQL.Clear;
     qryUsuario.SQL.Add('Select * ');
@@ -83,7 +91,7 @@ begin
     end
     else
     begin
-      Application.CreateForm(TfrmPainelPrincipal, frmPainelPrincipal);
+
       frmPainelPrincipal.fraModeloRodape1.cxlblUsuario.Caption := 'Usuário: ' + qryUsuario.FieldByName('nome').AsString;
       frmPainelPrincipal.ShowModal;
     end;

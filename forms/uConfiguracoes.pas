@@ -65,8 +65,6 @@ type
     cxLabel8: TcxLabel;
     cxDBTextEdit7: TcxDBTextEdit;
     cxLabel10: TcxLabel;
-    cxLabel13: TcxLabel;
-    cbb1: TcxDBComboBox;
     cxGroupBox2: TcxGroupBox;
     cxLabel14: TcxLabel;
     cxLabel15: TcxLabel;
@@ -216,6 +214,21 @@ type
     cxgrdbclmnGridDBTableView3ordem: TcxGridDBColumn;
     cxDBCheckBox3: TcxDBCheckBox;
     cxgrdbclmnGridDBTableView3ativo: TcxGridDBColumn;
+    lbl1: TcxLabel;
+    dteValorMaximo: TcxDBTextEdit;
+    cxgrdbclmnIndicadorvalor_maximo: TcxGridDBColumn;
+    cbb2: TcxDBLookupComboBox;
+    lbl2: TcxLabel;
+    dsPerfilFK: TDataSource;
+    tab1: TcxTabSheet;
+    pco1: TcxPageControl;
+    tab2: TcxTabSheet;
+    tab3: TcxTabSheet;
+    lbl3: TcxLabel;
+    lbl4: TcxLabel;
+    dte1: TcxDBTextEdit;
+    dte2: TcxDBTextEdit;
+    cxdbrdgrp2: TcxDBRadioGroup;
     procedure btnPesquisarIndicadorClick(Sender: TObject);
     procedure btnPesquisarUnidadesAutarquiaClick(Sender: TObject);
     procedure btnLimparIndicadorClick(Sender: TObject);
@@ -225,6 +238,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure dsPerfilDataChange(Sender: TObject; Field: TField);
     procedure btnLimparUnidadeAutarquiaClick(Sender: TObject);
+    procedure fraCabecalhoStaticText1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -237,7 +251,7 @@ var
 implementation
 
 uses
-  uBaseDados;
+  uBaseDados, uPainelPrincipal;
 
 {$R *.dfm}
 
@@ -365,6 +379,9 @@ begin
           qryPermissaoFK.Open;
           qryPermissao.Open;
           qryAba.Open;
+          qryPerfilFK.Open;
+          qryUsuario.SQL.Clear;
+          qryUsuario.Close;
      end;
 end;
 
@@ -415,5 +432,12 @@ begin
   end;
 end;
 
+procedure TfrmConfiguracoes.fraCabecalhoStaticText1Click(Sender: TObject);
+begin
+    frmPainelPrincipal.AtualizaIndicadores;
+    self.close;
+end;
+
 end.
+
 

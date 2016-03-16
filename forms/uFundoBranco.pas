@@ -28,8 +28,6 @@ procedure TFundoBranco.FormShow(Sender: TObject);
 begin
      Application.CreateForm(TfrmLogin, frmLogin);
      frmLogin.ShowModal;
-
-
 end;
 
 end.

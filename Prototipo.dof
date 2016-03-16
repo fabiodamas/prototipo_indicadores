@@ -134,6 +134,8 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+C:\Users\p017414\Documents\DevExpress VCL\Library\Delphi7\dcldxPScxGrid6LnkD7.bpl=ExpressPrinting System 4 ReportLink for ExpressQuantumGrid 6 by Developer Express Inc.
 [HistoryLists\hlDebugSourcePath]
 Count=2
 Item0=build
